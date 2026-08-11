@@ -8,7 +8,7 @@ export default function Footer({ setCurrentPage }) {
   };
 
   return (
-    <footer className="bg-brand-dark text-white pt-16 pb-12 border-t border-brand-deep/30">
+    <footer className="bg-[#002B40] text-white pt-16 pb-12 border-t border-[#003D5B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-12 pb-12 border-b border-white/10">
           
@@ -27,13 +27,13 @@ export default function Footer({ setCurrentPage }) {
                 <span className="block text-base sm:text-lg font-extrabold tracking-tight uppercase text-white">
                   PURE FOODS &amp; BEVERAGES
                 </span>
-                <span className="block text-xs font-medium tracking-wider text-brand-mint/80 uppercase">
+                <span className="block text-xs font-medium tracking-wider text-[#00A8B5] uppercase">
                   Contract Beverage Manufacturer
                 </span>
               </div>
             </div>
             
-            <p className="text-xl font-semibold text-brand-mint leading-snug">
+            <p className="text-xl font-semibold text-[#E6F7F8] leading-snug">
               Building Beverages. Building Brands.
             </p>
             
@@ -42,7 +42,7 @@ export default function Footer({ setCurrentPage }) {
             </p>
 
             <div className="pt-2">
-              <span className="inline-flex items-center px-3 py-1.5 rounded text-xs font-semibold bg-white/10 text-brand-mint border border-white/15">
+              <span className="inline-flex items-center px-3 py-1.5 rounded text-xs font-semibold bg-white/10 text-[#E6F7F8] border border-white/15">
                 FSSAI / GMP Compliant Processes
               </span>
             </div>
@@ -50,7 +50,7 @@ export default function Footer({ setCurrentPage }) {
 
           {/* Quick Navigation Col */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-brand-emerald">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#00A8B5]">
               Navigation
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -115,13 +115,13 @@ export default function Footer({ setCurrentPage }) {
 
           {/* Manufacturing Location Col */}
           <div className="lg:col-span-5 space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-brand-emerald">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#00A8B5]">
               Manufacturing Facility &amp; Contact
             </h4>
             
             <div className="space-y-3 text-sm text-gray-300">
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-brand-emerald shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#00A8B5] shrink-0 mt-0.5" />
                 <div>
                   <span className="block font-semibold text-white">Facility Address:</span>
                   <span>TTC Industrial Area, Mahape MIDC, Navi Mumbai</span>
@@ -129,26 +129,26 @@ export default function Footer({ setCurrentPage }) {
               </div>
 
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-brand-emerald shrink-0" />
+                <Phone className="w-5 h-5 text-[#00A8B5] shrink-0" />
                 <div>
                   <span className="text-xs text-gray-400 block">Phone:</span>
-                  <span className="font-mono text-white">[ADD PHONE NUMBER]</span>
+                  <span className="font-mono text-white">9988776655</span>
                 </div>
               </div>
 
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-brand-emerald shrink-0" />
+                <Mail className="w-5 h-5 text-[#00A8B5] shrink-0" />
                 <div>
                   <span className="text-xs text-gray-400 block">Email:</span>
-                  <span className="font-mono text-white">[ADD EMAIL ADDRESS]</span>
+                  <span className="font-mono text-white">purefoods@gmai.com</span>
                 </div>
               </div>
 
               <div className="flex items-center space-x-3">
-                <MessageSquare className="w-5 h-5 text-brand-emerald shrink-0" />
+                <MessageSquare className="w-5 h-5 text-[#00A8B5] shrink-0" />
                 <div>
                   <span className="text-xs text-gray-400 block">WhatsApp:</span>
-                  <span className="font-mono text-white">[ADD WHATSAPP NUMBER]</span>
+                  <span className="font-mono text-white">9988776655</span>
                 </div>
               </div>
             </div>
@@ -156,7 +156,7 @@ export default function Footer({ setCurrentPage }) {
             <div className="pt-2">
               <button
                 onClick={() => handleNavClick('contact')}
-                className="inline-flex items-center px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-brand-dark bg-brand-mint hover:bg-white rounded-lg transition-colors"
+                className="inline-flex items-center px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#003D5B] bg-[#E6F7F8] hover:bg-white rounded-lg transition-colors"
               >
                 <span>Submit B2B Enquiry</span>
                 <ArrowUpRight className="w-4 h-4 ml-1.5" />
