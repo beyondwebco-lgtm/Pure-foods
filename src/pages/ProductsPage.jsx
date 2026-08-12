@@ -33,8 +33,8 @@ export default function ProductsPage({ setCurrentPage }) {
       desc: 'Our primary manufacturing expertise — premium purified packaged drinking water with added minerals produced on high-capacity automated lines with multi-barrier Reverse Osmosis (RO) & UV sterilization.',
       packagingFormat: 'Glass Bottles, PET & Eco-Friendly Paperboard Cartons (250ml, 350ml, 500ml, 1 Litre)',
       image: '/images/uploaded/bottle_good_giving.jpg',
-      altImages: ['/images/uploaded/bottle_hydro.jpg', '/images/uploaded/carton_lafayette.jpg'],
-      b2bNote: 'Custom co-branding & private label packaging produced for leading retail brands, luxury hotels, corporate offices, airlines, and fine dining.',
+      altImages: ['/images/uploaded/bottle_ribbons_balloons.jpg', '/images/uploaded/bottle_hydro.jpg', '/images/uploaded/carton_lafayette.jpg'],
+      b2bNote: 'Custom co-branding & private label packaging produced for Ribbons & Balloons The Cake Shop, Good Giving Water, Galeries Lafayette, luxury hotels, corporate offices, airlines, and fine dining.',
       specs: [
         'Multi-barrier RO, Micro-filtration & UV sterilization',
         'Custom mineral fortification (Magnesium, Potassium, Calcium)',
@@ -48,100 +48,111 @@ export default function ProductsPage({ setCurrentPage }) {
       id: '02',
       key: 'juices',
       isCoreBusiness: false,
-      name: '02 — Fruit Drinks & Juices',
+      name: '02 — YOUNG MONK FRUIT SPLASH (1 Product, 3 Flavors)',
       shortTitle: 'Fruit Drinks & Juices',
-      desc: 'Fruit-based drinks, nectars, and fortified juice beverages (such as Young Monk Fruit Splash) formulated with B-Vitamins and natural glucose energy.',
-      packagingFormat: 'Packaging Options: Custom Printed PET Bottles (Strawberry, Blueberry, Orange & Lime) & Cartons',
+      desc: 'A single complete B2B fruit beverage product line — YOUNG MONK FRUIT SPLASH, formulated with real fruit concentrates, Added B-Vitamins & Glucose energy in three signature flavor variants.',
+      packagingFormat: 'Packaging Format: Single 3-Flavor PET Bottle Line (250ml)',
       image: '/images/uploaded/bottle_fruit_splash.jpg',
-      b2bNote: 'Formulated with real fruit pulp & quality-tested fruit concentrates.',
+      b2bNote: 'Formulated with real fruit pulp & quality-tested fruit concentrates in 3 flavor variants.',
       specs: [
-        'Pasteurized thermal hold processing',
-        'Strawberry Raspberry, Apple Blueberry, Orange Lime profiles',
-        'Fortified with B-Vitamins & natural glucose',
-        'B2B Private label commercial manufacturing ready'
+        'Flavor 1: Strawberry Raspberry (Red)',
+        'Flavor 2: Apple Blueberry (Purple)',
+        'Flavor 3: Orange Lime (Orange)',
+        'Fortified with Added B-Vitamins & Natural Glucose',
+        'Pasteurized thermal hold processing & B2B production ready'
       ]
     },
     {
       id: '03',
       key: 'flavoured',
       isCoreBusiness: false,
-      name: '03 — Flavoured & Tea Beverages',
-      shortTitle: 'Flavoured & Tea Beverages',
-      desc: 'Customized flavoured beverage solutions including hydration ice teas (Tisora HyTEA), classic lemonade, jeera, and botanical tea infusions.',
-      packagingFormat: 'Packaging Options: Ergonomic PET Bottles & Minimalist Glass Formats',
+      name: '03 — TISORA™ HyTEA (1 Product, 2 Flavors)',
+      shortTitle: 'Hydration Ice Tea',
+      desc: 'A single functional hydration ice tea product line — TISORA™ HyTEA (India\'s First Hydration Ice Tea), formulated with natural tea extracts, low calorie stevia & khandsari sugar, and essential electrolytes.',
+      packagingFormat: 'Packaging Format: Single 2-Flavor Ergonomic PET Bottle Line (250ml)',
       image: '/images/uploaded/bottle_tisora_pair.jpg',
-      b2bNote: 'Formulated with food-grade flavor emulsions and balanced acidity profiles.',
+      b2bNote: 'Low calorie smart hydration with essential electrolytes & natural caffeine.',
       specs: [
-        'Lemon Mint Sage, Juicy Peach & Spice profiles',
-        'Precision syrup formulation & tea extract blending',
-        'Vibrant color & aromatic flavor stability',
-        'Custom brand batch packaging'
+        'Flavor 1: Lemon Mint Sage (Green Cap)',
+        'Flavor 2: Juicy Peach (White Cap)',
+        'Low Calorie Stevia & Khandsari Sugar formulation',
+        'Essential Electrolyte blend & natural tea extracts'
       ]
     },
     {
       id: '04',
       key: 'functional',
       isCoreBusiness: false,
-      name: '04 — Functional & Electrolyte Beverages',
-      shortTitle: 'Functional & Electrolyte Beverages',
-      desc: 'Development and manufacturing support for innovative electrolyte hydration drinks (like Tisora HyTEA Low Calorie Smart Hydration) and herbal wellness infusions.',
-      packagingFormat: 'Packaging Options: Low-Calorie PET Formats, Mineral Cartons & Slim Cans',
-      image: '/images/uploaded/bottle_tisora_lemon.jpg',
-      b2bNote: 'Formulated for active lifestyle brands, wellness retail, and fitness chains.',
+      name: '04 — COCO FUSE. (1 Product, 3 Flavors)',
+      shortTitle: 'Coconut Water Hydration',
+      desc: 'A single premium functional coconut water hydration product line — COCO FUSE. (Coconut Water + Fruit Hydration), featuring 0% Added Sugar, 0% Artificial Colours, and 0% Artificial Preservatives across 3 distinct flavor variants.',
+      packagingFormat: 'Packaging Format: Single 3-Flavor Black Ergonomic PET Bottle Line (250ml)',
+      image: '/images/uploaded/bottle_cocofuse_mango.jpg',
+      altImages: ['/images/uploaded/bottle_cocofuse_watermelon.jpg', '/images/uploaded/bottle_cocofuse_basil.jpg'],
+      b2bNote: 'Formulated with pure coconut water & natural fruit extracts (Low Calorie ~20 kcal per 100ml).',
       specs: [
-        'Smart electrolyte & hydration formulations',
-        'Low-calorie stevia & khandsari sugar options',
-        'Vitamin & mineral-fortified liquid blending',
-        'Clean-label ingredient compatibility'
+        'Flavor 1: MANGO REFRESH (Yellow Accent)',
+        'Flavor 2: WATERMELON MINT RESET (Pink Accent)',
+        'Flavor 3: BASIL CHILI REVIVE (Green Accent)',
+        '0% Added Sugar • 0% Artificial Colours • 0% Preservatives',
+        'Natural electrolyte coconut water base with fruit hydration'
       ]
     },
     {
       id: '05',
-      key: 'speciality',
+      key: 'basil-fresh',
       isCoreBusiness: false,
-      name: '05 — Speciality / Custom Beverages',
-      shortTitle: 'Speciality / Custom Beverages',
-      desc: 'Tailored manufacturing solutions developed specifically according to proprietary client formulations, botanical ice teas, and custom beverage concepts.',
-      packagingFormat: 'Packaging Options: Customized to brand & commercial distribution requirements',
-      image: '/images/uploaded/bottle_tisora_peach.jpg',
-      b2bNote: 'Non-disclosure agreement (NDA) option available for proprietary client recipes.',
+      name: '05 — BASIL FRESH (1 Product, 4 Flavors)',
+      shortTitle: 'Basil Seed Beverage',
+      desc: 'A single exotic basil seed beverage product line — BASIL FRESH (Basil Seed Drink), featuring suspended basil seeds in premium conical glass bottles across four vibrant fruit flavor profiles.',
+      packagingFormat: 'Packaging Format: Conical Glass Bottles with Silver Crown Caps (250ml)',
+      image: '/images/uploaded/bottle_basil_fresh.jpg',
+      b2bNote: 'Suspended basil seed technology with high clarity glass bottling.',
       specs: [
-        'Custom recipe scaling & batch trials',
-        'Dedicated ingredient sourcing support',
-        'Flexible packaging line trial runs',
-        'Full B2B commercial production support'
+        'Flavor 1: Pink Guava (Red/Pink)',
+        'Flavor 2: Orange (Sun Gold)',
+        'Flavor 3: Blueberry (Ocean Blue)',
+        'Flavor 4: Mango (Golden Yellow)',
+        'Suspended basil seed texture & natural digestion support'
       ]
     }
   ];
 
   const realDeliverables = [
     {
-      title: 'GOOD GIVING WATER',
-      category: 'Packaged Drinking Water',
-      subtitle: 'Private Label Custom PET Water Bottling',
+      title: 'GOOD GIVING WATER & RIBBONS & BALLOONS',
+      category: 'Packaged Drinking Water (Core Business)',
+      subtitle: 'Custom PET & Glass Bottling for Good Giving Water & Ribbons & Balloons The Cake Shop',
       image: '/images/uploaded/bottle_good_giving.jpg',
       tag: 'Water Core Business'
     },
     {
-      title: 'TISORA™ HyTEA (Lemon Mint Sage)',
-      category: 'Functional Hydration Ice Tea',
-      subtitle: "India's First Hydration Ice Tea with Electrolytes",
-      image: '/images/uploaded/bottle_tisora_lemon.jpg',
-      tag: 'Functional Hydration'
+      title: 'COCO FUSE.',
+      category: 'Coconut Water + Fruit Hydration (1 Product, 3 Flavors)',
+      subtitle: 'Mango Refresh • Watermelon Mint Reset • Basil Chili Revive (0% Added Sugar)',
+      image: '/images/uploaded/bottle_cocofuse_mango.jpg',
+      tag: 'Coconut Hydration Line'
     },
     {
       title: 'YOUNG MONK FRUIT SPLASH',
-      category: 'Fruit & Vitamin Beverage',
-      subtitle: 'Added B-Vitamins & Glucose (3 Flavors)',
+      category: 'Fruit Beverage Product Line (1 Product, 3 Flavors)',
+      subtitle: 'Strawberry Raspberry • Apple Blueberry • Orange Lime (With B-Vitamins)',
       image: '/images/uploaded/bottle_fruit_splash.jpg',
-      tag: 'Fruit Drinks'
+      tag: 'Fruit Beverage Line'
     },
     {
-      title: 'TISORA™ HyTEA (Juicy Peach)',
-      category: 'Smart Hydration Tea',
-      subtitle: 'Low Calorie, Natural Stevia & Electrolyte Blend',
-      image: '/images/uploaded/bottle_tisora_peach.jpg',
-      tag: 'Botanical Ice Tea'
+      title: 'BASIL FRESH',
+      category: 'Basil Seed Drink (1 Product, 4 Flavors)',
+      subtitle: 'Pink Guava • Orange • Blueberry • Mango (Glass Bottled)',
+      image: '/images/uploaded/bottle_basil_fresh.jpg',
+      tag: 'Basil Seed Line'
+    },
+    {
+      title: 'TISORA™ HyTEA',
+      category: 'Hydration Ice Tea (1 Product, 2 Flavors)',
+      subtitle: 'Lemon Mint Sage & Juicy Peach (Electrolyte Hydration Ice Tea)',
+      image: '/images/uploaded/bottle_tisora_pair.jpg',
+      tag: 'Hydration Ice Tea'
     },
   ];
 
@@ -170,7 +181,7 @@ export default function ProductsPage({ setCurrentPage }) {
             </h1>
 
             <p className="text-lg sm:text-2xl text-[#E6F7F8] font-medium leading-relaxed max-w-3xl">
-              Specialized B2B beverage manufacturing with a primary focus on <strong className="text-white underline decoration-[#00A8B5] decoration-2 underline-offset-4">Packaged Drinking Water</strong>, alongside customized juice and flavoured beverage lines.
+              Specialized B2B beverage manufacturing with a primary focus on <strong className="text-white underline decoration-[#00A8B5] decoration-2 underline-offset-4">Packaged Drinking Water</strong>, alongside customized lines like COCO FUSE. Coconut Water, Young Monk Fruit Splash, Tisora HyTEA, and Basil Fresh.
             </p>
 
             <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-xs sm:text-sm text-gray-200 font-semibold max-w-2xl flex items-center space-x-3">
@@ -197,7 +208,7 @@ export default function ProductsPage({ setCurrentPage }) {
               </h2>
 
               <p className="text-sm sm:text-base text-[#E6F7F8] leading-relaxed font-medium max-w-3xl">
-                Packaged drinking water is our core foundation. Our facility in Mahape MIDC Navi Mumbai is engineered for large-scale RO purification, mineral dosing, automated filling, and multi-format packaging in PET bottles (like Good Giving Water), luxury glass, and eco-friendly cartons.
+                Packaged drinking water is our core foundation. Our facility in Mahape MIDC Navi Mumbai is engineered for large-scale RO purification, mineral dosing, automated filling, and multi-format packaging in PET bottles (like Good Giving Water &amp; Ribbons &amp; Balloons), luxury glass, and eco-friendly cartons.
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
@@ -320,7 +331,7 @@ export default function ProductsPage({ setCurrentPage }) {
                   )}
                 </div>
 
-                {/* Complete bottle/carton visible naturally with 80% height */}
+                {/* Main Product Image */}
                 <img
                   src={prod.image}
                   alt={prod.name}
@@ -413,11 +424,11 @@ export default function ProductsPage({ setCurrentPage }) {
             REAL PRIVATE LABEL DELIVERABLES PORTFOLIO
           </h2>
           <p className="text-sm text-[#4A6070] max-w-3xl">
-            Actual private label products manufactured at our Mahape MIDC Navi Mumbai facility across packaged drinking water, functional hydration ice tea, and vitamin fruit drinks.
+            Actual private label products manufactured at our Mahape MIDC Navi Mumbai facility across packaged drinking water, COCO FUSE. coconut hydration, Young Monk Fruit Splash, Tisora HyTEA, and Basil Fresh.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {realDeliverables.map((item, idx) => (
             <div
               key={idx}
