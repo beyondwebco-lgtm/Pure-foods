@@ -18,7 +18,9 @@ import {
   Truck,
   Check,
   Layers,
-  Award
+  Award,
+  Clock,
+  Compass
 } from 'lucide-react';
 
 export default function PrivateLabelPage({ setCurrentPage }) {
@@ -30,56 +32,56 @@ export default function PrivateLabelPage({ setCurrentPage }) {
   const timeline = [
     {
       num: '01',
-      title: 'BRING YOUR BEVERAGE CONCEPT',
-      icon: LightbulbIcon,
-      desc: 'Share your beverage idea, target audience, and business requirements.',
-      detail: 'Define your desired beverage category, target sensory profile, volume objectives, and distribution requirements with our technical team.',
-      output: 'Project Brief & Target Specifications',
+      title: 'CONCEPT & REQUIREMENT BRIEF',
+      icon: Compass,
+      desc: 'Define beverage goals, target sensory profile & commercial volumes.',
+      detail: 'Specify beverage category, taste profile, mineral requirements, target price points, and intended distribution channels.',
+      output: 'Project Scope & Technical Requirement Brief',
       image: null
     },
     {
       num: '02',
-      title: 'R&D & FORMULATION',
+      title: 'LAB R&D & FORMULATION',
       icon: FlaskConical,
-      desc: 'Develop and refine the beverage formulation in our lab.',
-      detail: 'Our R&D approach balances flavor emulsions, sweetness profiles, mineral fortification, stability, and regulatory compliance.',
-      output: 'Approved Master Recipe & Flavor Sample',
+      desc: 'Develop & test custom formulation in our Mahape MIDC lab.',
+      detail: 'Our food scientists balance flavor emulsions, sweetness profiles, added minerals (Magnesium, Potassium), and thermal stability.',
+      output: 'Master Approved Recipe & Lab Sample Batch',
       image: '/images/quality_lab.png'
     },
     {
       num: '03',
       title: 'SAMPLING & SENSORY APPROVAL',
       icon: Sparkles,
-      desc: 'Evaluate physical trial samples and finalize the recipe.',
-      detail: 'Conduct sensory panel testing, review physical trial samples, assess shelf-life indicators, and grant formal recipe sign-off.',
-      output: 'Client Tasting Sign-Off & Lab Approval',
+      desc: 'Evaluate physical trial samples & grant recipe sign-off.',
+      detail: 'Taste test trial samples, conduct sensory evaluation, test shelf-life indicators, and grant formal client recipe sign-off.',
+      output: 'Formal Client Tasting Sign-Off & Lab Clearance',
       image: null
     },
     {
       num: '04',
       title: 'BOTTLE & PACKAGING DESIGN',
       icon: Palette,
-      desc: 'Select suitable bottle molds, formats, and artwork packaging.',
-      detail: 'Finalize bottle shapes (PET, luxury glass, eco-friendly cartons), cap closures, graphic label artwork, and outer case configurations.',
-      output: '3D Bottle Proof & Approved Label Artwork',
+      desc: 'Select bottle molds, closure caps & custom label graphics.',
+      detail: 'Finalize bottle shapes (PET, luxury crown glass, eco-friendly cartons), cap colors, label artwork printing, and case packs.',
+      output: '3D Bottle Proof & Printed Label Artwork',
       image: '/images/uploaded/bottle_hydro.jpg'
     },
     {
       num: '05',
-      title: 'AUTOMATED BOTTLING PRODUCTION',
+      title: 'AUTOMATED COMMERCIAL BOTTLING',
       icon: Factory,
-      desc: 'Execute commercial manufacturing on high-speed lines.',
-      detail: 'Initiate scheduled commercial production runs under automated RO purification, mineral dosing, hot/cold filling, capping, and labeling.',
+      desc: 'Execute commercial bottling run on automated high-speed lines.',
+      detail: 'Initiate scheduled production under multi-barrier RO purification, inline mineral dosing, automated filling, capping, and labeling.',
       output: 'Commercial Manufacturing Run Completed',
       image: '/images/hero_factory.png'
     },
     {
       num: '06',
-      title: 'QUALITY TESTED FINISHED GOODS',
+      title: 'QUALITY TESTED DISPATCH',
       icon: Truck,
-      desc: 'Receive production-ready commercial beverage stock.',
-      detail: 'Finished, quality-tested beverage inventory packed in protective shipping cases, accompanied by Certificate of Analysis (COA) ready for dispatch.',
-      output: 'Commercial Inventory Ready for Dispatch',
+      desc: 'Receive production-ready commercial stock with COA certification.',
+      detail: 'Finished inventory packed in protective shrink-wrapped shipping cases, accompanied by Certificate of Analysis (COA) for delivery.',
+      output: 'Quality-Tested Commercial Stock Ready for Delivery',
       image: '/images/uploaded/carton_lafayette.jpg'
     }
   ];
@@ -180,110 +182,111 @@ export default function PrivateLabelPage({ setCurrentPage }) {
         </div>
       </section>
 
-      {/* REDESIGNED: PRIVATE LABEL DEVELOPMENT PROCESS (HIGH-IMPACT STEPPER ROADMAP) */}
-      <section id="process-timeline" className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10 space-y-12 scroll-mt-32">
+      {/* REDESIGNED: PRIVATE LABEL DEVELOPMENT PROCESS (LUXURY DARK STAGE ROADMAP) */}
+      <section id="process-timeline" className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10 scroll-mt-32 space-y-12">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#EAF4F2] text-[#073B2A] text-xs font-extrabold uppercase tracking-widest border border-[#DCE8E1]">
-            <Layers className="w-4 h-4 text-[#0B6B50]" />
-            <span>STEP-BY-STEP EXECUTION ROADMAP</span>
+        {/* Container Banner Stage */}
+        <div className="bg-gradient-to-br from-[#05291D] via-[#073B2A] to-[#002B40] text-white rounded-3xl p-8 sm:p-14 lg:p-16 border-2 border-[#0B6B50] shadow-2xl relative overflow-hidden space-y-12">
+          
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto space-y-4 relative z-10">
+            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-[#0B6B50] text-white text-xs font-extrabold uppercase tracking-widest border border-white/20 shadow-md">
+              <Layers className="w-4 h-4 fill-current text-white" />
+              <span>STEP-BY-STEP CONTRACT MANUFACTURING ROADMAP</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white uppercase leading-tight font-sans">
+              PRIVATE LABEL DEVELOPMENT PROCESS
+            </h2>
+
+            <p className="text-base sm:text-lg text-[#DCE8E1] font-medium leading-relaxed">
+              A structured 6-stage technical execution path taking your beverage concept from formulation R&amp;D to automated commercial bottling &amp; dispatch.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#073B2A] uppercase">
-            PRIVATE LABEL DEVELOPMENT PROCESS
-          </h2>
-          <p className="text-base sm:text-lg text-[#65736C] font-medium leading-relaxed">
-            A structured, 6-stage technical execution path taking your beverage concept from formulation R&amp;D to commercial production &amp; dispatch.
-          </p>
-        </div>
 
-        {/* Horizontal Process Stepper Indicator Bar */}
-        <div className="hidden lg:grid grid-cols-6 gap-2 p-3 bg-white rounded-2xl border border-[#DCE8E1] shadow-xs">
-          {timeline.map((t) => (
+          {/* 6-STEP GRID ROADMAP */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+            {timeline.map((item) => {
+              const StepIcon = item.icon || Sparkles;
+              return (
+                <div
+                  key={item.num}
+                  id={`step-${item.num}`}
+                  className="bg-white/95 backdrop-blur-md text-[#17211D] rounded-3xl border border-white/80 p-8 flex flex-col justify-between space-y-6 shadow-xl hover:scale-[1.02] transition-all duration-300 group relative"
+                >
+                  {/* Step Number & Icon Header */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <span className="px-3.5 py-1.5 rounded-xl bg-[#073B2A] text-white font-mono font-extrabold text-sm shadow-sm group-hover:bg-[#0B6B50] transition-colors">
+                        STAGE {item.num}
+                      </span>
+                    </div>
+                    <div className="w-10 h-10 rounded-xl bg-[#EAF4F2] text-[#073B2A] flex items-center justify-center">
+                      <StepIcon className="w-5 h-5 text-[#0B6B50]" />
+                    </div>
+                  </div>
+
+                  {/* Title & Description */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-extrabold text-[#073B2A] uppercase leading-snug group-hover:text-[#0B6B50] transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs font-bold text-[#17211D]">
+                      {item.desc}
+                    </p>
+                    <p className="text-xs text-[#65736C] font-medium leading-relaxed">
+                      {item.detail}
+                    </p>
+                  </div>
+
+                  {/* Photo or Key Output Badge */}
+                  <div className="space-y-3 pt-2">
+                    {item.image ? (
+                      <div className="h-32 rounded-2xl bg-[#F5F8FA] border border-[#DCE8E1] p-3 flex items-center justify-center overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="max-h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-xs"
+                        />
+                      </div>
+                    ) : (
+                      <div className="p-3 rounded-xl bg-[#FAFBFD] border border-[#DCE8E1] flex items-center space-x-2 text-xs font-semibold text-[#073B2A]">
+                        <CheckCircle2 className="w-4 h-4 text-[#0B6B50] shrink-0" />
+                        <span>{item.output}</span>
+                      </div>
+                    )}
+
+                    <div className="p-2.5 rounded-xl bg-[#EAF4F2] border border-[#DCE8E1] text-[11px] font-bold text-[#073B2A] flex items-center space-x-1.5">
+                      <Award className="w-3.5 h-3.5 text-[#0B6B50] shrink-0" />
+                      <span className="truncate">Key Deliverable: {item.output}</span>
+                    </div>
+                  </div>
+
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Bottom Call to Action */}
+          <div className="pt-8 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10">
+            <div className="space-y-1 text-left">
+              <h4 className="text-xl font-extrabold uppercase text-white">
+                READY TO START YOUR PRIVATE LABEL BEVERAGE PROJECT?
+              </h4>
+              <p className="text-xs text-[#DCE8E1] font-medium">
+                Connect directly with our manufacturing team in Mahape MIDC Navi Mumbai to review formulations &amp; batch estimates.
+              </p>
+            </div>
             <button
-              key={t.num}
-              onClick={() => {
-                const el = document.getElementById(`step-${t.num}`);
-                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              }}
-              className="p-2.5 rounded-xl bg-[#FAFBFD] hover:bg-[#EAF4F2] border border-[#DCE8E1] text-left transition-all group flex items-center space-x-2.5"
+              onClick={() => handleNavClick('contact')}
+              className="px-8 py-4 text-xs font-extrabold uppercase tracking-wider text-[#073B2A] bg-white hover:bg-[#EAF4F2] rounded-xl shadow-lg transition-all shrink-0 flex items-center space-x-2"
             >
-              <span className="w-7 h-7 rounded-lg bg-[#073B2A] text-white font-mono text-xs font-extrabold flex items-center justify-center shrink-0 group-hover:bg-[#0B6B50]">
-                {t.num}
-              </span>
-              <span className="text-[11px] font-bold text-[#073B2A] truncate">
-                {t.title.split(' ')[0]} {t.title.split(' ')[1] || ''}
-              </span>
+              <span>DISCUSS YOUR FORMULATION</span>
+              <ArrowRight className="w-4 h-4 text-[#073B2A]" />
             </button>
-          ))}
+          </div>
+
         </div>
-
-        {/* 6 LUXURY STEPPER CARDS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {timeline.map((item) => {
-            const StepIcon = item.icon || Sparkles;
-            return (
-              <div
-                key={item.num}
-                id={`step-${item.num}`}
-                className="bg-white rounded-3xl border border-[#DCE8E1] hover:border-[#0B6B50] shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden group p-8 space-y-6 relative"
-              >
-                {/* Top Badge & Number */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    <span className="w-12 h-12 rounded-2xl bg-[#073B2A] text-white flex items-center justify-center font-extrabold font-mono text-lg shrink-0 group-hover:bg-[#0B6B50] transition-colors shadow-sm">
-                      {item.num}
-                    </span>
-                    <span className="text-xs font-extrabold uppercase tracking-widest text-[#0B6B50]">
-                      STAGE {item.num}
-                    </span>
-                  </div>
-                  <div className="w-10 h-10 rounded-xl bg-[#EAF4F2] text-[#073B2A] flex items-center justify-center">
-                    <StepIcon className="w-5 h-5 text-[#0B6B50]" />
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="space-y-3">
-                  <h3 className="text-xl font-extrabold text-[#073B2A] group-hover:text-[#0B6B50] transition-colors uppercase leading-tight">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm font-bold text-[#17211D] leading-snug">
-                    {item.desc}
-                  </p>
-                  <p className="text-xs text-[#65736C] font-medium leading-relaxed">
-                    {item.detail}
-                  </p>
-                </div>
-
-                {/* Photo or Stage Output Box */}
-                <div className="space-y-3 pt-2">
-                  {item.image ? (
-                    <div className="h-36 rounded-2xl bg-[#F5F8FA] border border-[#DCE8E1] p-3 flex items-center justify-center overflow-hidden">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="max-h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-sm"
-                      />
-                    </div>
-                  ) : (
-                    <div className="p-3 rounded-xl bg-[#FAFBFD] border border-[#DCE8E1] flex items-center space-x-2 text-xs font-semibold text-[#073B2A]">
-                      <CheckCircle2 className="w-4 h-4 text-[#0B6B50] shrink-0" />
-                      <span>{item.output}</span>
-                    </div>
-                  )}
-
-                  <div className="p-2.5 rounded-xl bg-[#EAF4F2] border border-[#DCE8E1] text-[11px] font-bold text-[#073B2A] flex items-center space-x-1.5">
-                    <Award className="w-3.5 h-3.5 text-[#0B6B50] shrink-0" />
-                    <span className="truncate">Key Output: {item.output}</span>
-                  </div>
-                </div>
-
-              </div>
-            );
-          })}
-        </div>
-
       </section>
 
       {/* TARGET B2B CLIENT SEGMENTS */}
@@ -332,10 +335,10 @@ export default function PrivateLabelPage({ setCurrentPage }) {
         <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-r from-[#05291D] via-[#073B2A] to-[#05291D] text-white border border-[#0B6B50]/30 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-3 text-left">
             <h3 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight">
-              READY TO START YOUR PRIVATE LABEL BEVERAGE PROJECT?
+              HAVE A CUSTOM BEVERAGE REQUIREMENT OR RFQ?
             </h3>
             <p className="text-sm text-[#EAF4F2] max-w-xl font-medium">
-              Connect directly with our manufacturing team in Mahape MIDC Navi Mumbai to discuss your formulation, bottle requirements, and volume estimates.
+              Tell us what you want to manufacture. Connect directly with our facility team in Mahape MIDC Navi Mumbai for technical discussions &amp; project estimates.
             </p>
           </div>
           <button
@@ -349,27 +352,5 @@ export default function PrivateLabelPage({ setCurrentPage }) {
       </section>
 
     </div>
-  );
-}
-
-// Helper Lightbulb Icon
-function LightbulbIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
-      <path d="M9 18h6" />
-      <path d="M10 22h4" />
-    </svg>
   );
 }
