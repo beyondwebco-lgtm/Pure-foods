@@ -31,7 +31,7 @@ export default function ProductsPage({ setCurrentPage }) {
     }
   };
 
-  // Comprehensive Product Lines Catalog Data (All 5 Products Rendered Sequentially)
+  // Comprehensive Product Lines Catalog Data (In Strict Numerical Order: 01 -> 02 -> 03 -> 04 -> 05)
   const products = [
     {
       id: '01',
@@ -73,50 +73,6 @@ export default function ProductsPage({ setCurrentPage }) {
         { label: 'Volume Offerings', value: '250ml, 350ml, 500ml, 1000ml (1L)' },
         { label: 'Quality Certification', value: 'FSSAI & BIS Compliant Facility' },
         { label: 'Primary Clients', value: 'Good Giving Water, Ribbons & Balloons, Galeries Lafayette' }
-      ]
-    },
-    {
-      id: '04',
-      sectionId: 'product-cocofuse',
-      key: 'cocofuse',
-      isCoreBusiness: false,
-      categoryBadge: 'CATEGORY 04 — FUNCTIONAL HYDRATION',
-      title: '04 — COCO FUSE.',
-      subtitle: 'COCONUT WATER HYDRATION PRODUCT LINE',
-      shortTitle: 'COCO FUSE. Coconut Water',
-      description: 'A single premium functional coconut water hydration product combining pure coconut water with natural fruit hydration across three distinct flavour variants.',
-      mainImage: '/images/uploaded/bottle_cocofuse_mango.jpg',
-      altImages: ['/images/uploaded/bottle_cocofuse_watermelon.jpg', '/images/uploaded/bottle_cocofuse_basil.jpg'],
-      fruitElements: [
-        { emoji: '🥥', label: 'Pure Coconut Water' },
-        { emoji: '🥭', label: 'Fresh Mango' },
-        { emoji: '🍉', label: 'Juicy Watermelon' },
-        { emoji: '🍃', label: 'Mint & Basil' }
-      ],
-      flavors: [
-        { name: 'Mango Refresh', color: '#EAB308' },
-        { name: 'Watermelon Mint Reset', color: '#EC4899' },
-        { name: 'Basil Chili Revive', color: '#22C55E' }
-      ],
-      packaging: '250ml Ergonomic PET Bottle',
-      format: 'Single 3-Flavour Product Line',
-      features: [
-        'Natural electrolyte coconut water base',
-        'Mango Refresh flavor variant',
-        'Watermelon Mint Reset flavor variant',
-        'Basil Chili Revive flavor variant',
-        '0% Added Sugar',
-        '0% Artificial Colours',
-        '0% Artificial Preservatives'
-      ],
-      formulationNote: 'Formulated with pure coconut water & natural fruit extracts (Low Calorie ~20 kcal per 100ml).',
-      specs: [
-        { label: 'Product Category', value: 'Coconut Water + Fruit Hydration' },
-        { label: 'Flavor Variants', value: 'Mango Refresh, Watermelon Mint, Basil Chili' },
-        { label: 'Packaging Format', value: '250ml Black Ergonomic PET Bottle' },
-        { label: 'Nutritional Profile', value: '0% Added Sugar, 0% Artificial Preservatives' },
-        { label: 'Calorie Count', value: 'Low Calorie (~20 kcal per 100ml)' },
-        { label: 'Manufacturing Ready', value: 'Turn-key B2B Commercial Bottling' }
       ]
     },
     {
@@ -198,6 +154,50 @@ export default function ProductsPage({ setCurrentPage }) {
       ]
     },
     {
+      id: '04',
+      sectionId: 'product-cocofuse',
+      key: 'cocofuse',
+      isCoreBusiness: false,
+      categoryBadge: 'CATEGORY 04 — FUNCTIONAL HYDRATION',
+      title: '04 — COCO FUSE.',
+      subtitle: 'COCONUT WATER HYDRATION PRODUCT LINE',
+      shortTitle: 'COCO FUSE. Coconut Water',
+      description: 'A single premium functional coconut water hydration product combining pure coconut water with natural fruit hydration across three distinct flavour variants.',
+      mainImage: '/images/uploaded/bottle_cocofuse_mango.jpg',
+      altImages: ['/images/uploaded/bottle_cocofuse_watermelon.jpg', '/images/uploaded/bottle_cocofuse_basil.jpg'],
+      fruitElements: [
+        { emoji: '🥥', label: 'Pure Coconut Water' },
+        { emoji: '🥭', label: 'Fresh Mango' },
+        { emoji: '🍉', label: 'Juicy Watermelon' },
+        { emoji: '🍃', label: 'Mint & Basil' }
+      ],
+      flavors: [
+        { name: 'Mango Refresh', color: '#EAB308' },
+        { name: 'Watermelon Mint Reset', color: '#EC4899' },
+        { name: 'Basil Chili Revive', color: '#22C55E' }
+      ],
+      packaging: '250ml Ergonomic PET Bottle',
+      format: 'Single 3-Flavour Product Line',
+      features: [
+        'Natural electrolyte coconut water base',
+        'Mango Refresh flavor variant',
+        'Watermelon Mint Reset flavor variant',
+        'Basil Chili Revive flavor variant',
+        '0% Added Sugar',
+        '0% Artificial Colours',
+        '0% Artificial Preservatives'
+      ],
+      formulationNote: 'Formulated with pure coconut water & natural fruit extracts (Low Calorie ~20 kcal per 100ml).',
+      specs: [
+        { label: 'Product Category', value: 'Coconut Water + Fruit Hydration' },
+        { label: 'Flavor Variants', value: 'Mango Refresh, Watermelon Mint, Basil Chili' },
+        { label: 'Packaging Format', value: '250ml Black Ergonomic PET Bottle' },
+        { label: 'Nutritional Profile', value: '0% Added Sugar, 0% Artificial Preservatives' },
+        { label: 'Calorie Count', value: 'Low Calorie (~20 kcal per 100ml)' },
+        { label: 'Manufacturing Ready', value: 'Turn-key B2B Commercial Bottling' }
+      ]
+    },
+    {
       id: '05',
       sectionId: 'product-basil-fresh',
       key: 'basil-fresh',
@@ -250,14 +250,6 @@ export default function ProductsPage({ setCurrentPage }) {
       flavorBadges: ['Added Minerals', 'Custom PET & Glass']
     },
     {
-      title: 'COCO FUSE.',
-      category: 'Coconut Water + Fruit Hydration',
-      subtitle: 'Mango Refresh • Watermelon Mint Reset • Basil Chili Revive (0% Sugar)',
-      image: '/images/uploaded/bottle_cocofuse_mango.jpg',
-      tag: 'Coconut Hydration',
-      flavorBadges: ['Mango', 'Watermelon', 'Basil Chili']
-    },
-    {
       title: 'YOUNG MONK FRUIT SPLASH',
       category: 'Fruit Beverage Product Line',
       subtitle: 'Strawberry Raspberry • Apple Blueberry • Orange Lime (With B-Vitamins)',
@@ -266,20 +258,28 @@ export default function ProductsPage({ setCurrentPage }) {
       flavorBadges: ['Strawberry', 'Blueberry', 'Orange Lime']
     },
     {
-      title: 'BASIL FRESH',
-      category: 'Basil Seed Drink',
-      subtitle: 'Pink Guava • Orange • Blueberry • Mango (Glass Bottled)',
-      image: '/images/uploaded/bottle_basil_fresh.jpg',
-      tag: 'Basil Seed Line',
-      flavorBadges: ['Pink Guava', 'Orange', 'Blueberry', 'Mango']
-    },
-    {
       title: 'TISORA™ HyTEA',
       category: 'Hydration Ice Tea',
       subtitle: 'Lemon Mint Sage & Juicy Peach (Electrolyte Hydration Ice Tea)',
       image: '/images/uploaded/bottle_tisora_pair.jpg',
       tag: 'Hydration Ice Tea',
       flavorBadges: ['Lemon Mint Sage', 'Juicy Peach']
+    },
+    {
+      title: 'COCO FUSE.',
+      category: 'Coconut Water + Fruit Hydration',
+      subtitle: 'Mango Refresh • Watermelon Mint Reset • Basil Chili Revive (0% Sugar)',
+      image: '/images/uploaded/bottle_cocofuse_mango.jpg',
+      tag: 'Coconut Hydration',
+      flavorBadges: ['Mango', 'Watermelon', 'Basil Chili']
+    },
+    {
+      title: 'BASIL FRESH',
+      category: 'Basil Seed Drink',
+      subtitle: 'Pink Guava • Orange • Blueberry • Mango (Glass Bottled)',
+      image: '/images/uploaded/bottle_basil_fresh.jpg',
+      tag: 'Basil Seed Line',
+      flavorBadges: ['Pink Guava', 'Orange', 'Blueberry', 'Mango']
     },
   ];
 
@@ -301,7 +301,7 @@ export default function ProductsPage({ setCurrentPage }) {
             </h1>
 
             <p className="text-base sm:text-xl text-[#DCE8E1] font-medium leading-relaxed max-w-3xl">
-              Explore our complete B2B manufacturing portfolio across Packaged Drinking Water (Primary Core Business), COCO FUSE. Coconut Hydration, Young Monk Fruit Splash, Tisora HyTEA, and Basil Fresh.
+              Explore our complete B2B manufacturing portfolio across Packaged Drinking Water (Primary Core Business), Young Monk Fruit Splash, Tisora HyTEA, COCO FUSE. Coconut Hydration, and Basil Fresh.
             </p>
           </div>
 
@@ -325,7 +325,7 @@ export default function ProductsPage({ setCurrentPage }) {
         </div>
       </section>
 
-      {/* RENDER ALL 5 PRODUCTS SEQUENTIALLY DOWN THE PAGE */}
+      {/* RENDER ALL 5 PRODUCTS SEQUENTIALLY IN STRICT NUMERICAL ORDER (01 -> 02 -> 03 -> 04 -> 05) */}
       <div className="space-y-20 lg:space-y-28">
         {products.map((prod) => (
           <div key={prod.id} id={prod.sectionId} className="space-y-10 scroll-mt-32">
@@ -532,7 +532,7 @@ export default function ProductsPage({ setCurrentPage }) {
             REAL PRIVATE LABEL DELIVERABLES PORTFOLIO
           </h2>
           <p className="text-sm text-[#65736C] max-w-3xl font-medium">
-            Actual private label products manufactured at our Mahape MIDC Navi Mumbai facility across packaged drinking water, COCO FUSE. coconut hydration, Young Monk Fruit Splash, Tisora HyTEA, and Basil Fresh.
+            Actual private label products manufactured at our Mahape MIDC Navi Mumbai facility across packaged drinking water, Young Monk Fruit Splash, Tisora HyTEA, COCO FUSE. coconut hydration, and Basil Fresh.
           </p>
         </div>
 
