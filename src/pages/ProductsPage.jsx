@@ -171,49 +171,6 @@ export default function ProductsPage({ setCurrentPage }) {
     }
   ];
 
-  const realDeliverables = [
-    {
-      title: 'GOOD GIVING WATER & RIBBONS & BALLOONS',
-      category: 'Packaged Drinking Water (Core Business)',
-      subtitle: 'Custom PET & Glass Bottling for Good Giving Water & Ribbons & Balloons The Cake Shop',
-      image: '/images/uploaded/bottle_good_giving.jpg',
-      tag: 'Water Core Business',
-      flavorBadges: ['Added Minerals', 'Custom PET & Glass']
-    },
-    {
-      title: 'YOUNG MONK FRUIT SPLASH',
-      category: 'Fruit Beverage Product Line',
-      subtitle: 'Strawberry Raspberry • Apple Blueberry • Orange Lime (With B-Vitamins)',
-      image: '/images/uploaded/bottle_fruit_splash.jpg',
-      tag: 'Fruit Beverage Line',
-      flavorBadges: ['Strawberry', 'Blueberry', 'Orange Lime']
-    },
-    {
-      title: 'TISORA™ HyTEA',
-      category: 'Hydration Ice Tea',
-      subtitle: 'Lemon Mint Sage & Juicy Peach (Electrolyte Hydration Ice Tea)',
-      image: '/images/uploaded/bottle_tisora_pair.jpg',
-      tag: 'Hydration Ice Tea',
-      flavorBadges: ['Lemon Mint Sage', 'Juicy Peach']
-    },
-    {
-      title: 'COCO FUSE.',
-      category: 'Coconut Water + Fruit Hydration',
-      subtitle: 'Mango Refresh • Watermelon Mint Reset • Basil Chili Revive (0% Sugar)',
-      image: '/images/uploaded/bottle_cocofuse_mango.jpg',
-      tag: 'Coconut Hydration',
-      flavorBadges: ['Mango', 'Watermelon', 'Basil Chili']
-    },
-    {
-      title: 'BASIL FRESH',
-      category: 'Basil Seed Drink',
-      subtitle: 'Pink Guava • Orange • Blueberry • Mango (Glass Bottled)',
-      image: '/images/uploaded/bottle_basil_fresh.jpg',
-      tag: 'Basil Seed Line',
-      flavorBadges: ['Pink Guava', 'Orange', 'Blueberry', 'Mango']
-    },
-  ];
-
   const currentTabProduct = products[activeTab];
 
   return (
@@ -492,88 +449,6 @@ export default function ProductsPage({ setCurrentPage }) {
                   >
                     <span>INQUIRE {prod.shortTitle}</span>
                     <ArrowRight className="w-3.5 h-3.5 text-white" />
-                  </button>
-                </div>
-
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* REAL PRIVATE LABEL DELIVERABLES PORTFOLIO GRID */}
-      <section className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10 space-y-8 pt-4">
-        <div className="space-y-2">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#EAF4F2] text-[#073B2A] text-xs font-extrabold uppercase tracking-wider border border-[#DCE8E1]">
-            <Layers className="w-3.5 h-3.5 text-[#0B6B50]" />
-            <span>REAL MANUFACTURED PRODUCTS</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#073B2A] uppercase tracking-tight">
-            REAL PRIVATE LABEL DELIVERABLES PORTFOLIO
-          </h2>
-          <p className="text-sm text-[#65736C] max-w-2xl font-medium">
-            Actual private label products manufactured at our Mahape MIDC Navi Mumbai facility across packaged drinking water, Young Monk Fruit Splash, Tisora HyTEA, COCO FUSE., and Basil Fresh.
-          </p>
-        </div>
-
-        {/* 5-COLUMN EDITORIAL PORTFOLIO CARDS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {realDeliverables.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-3xl border border-[#DCE8E1] border-t-4 border-t-[#073B2A] hover:border-t-[#0B6B50] hover:border-[#0B6B50] shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden group relative"
-            >
-              {/* Studio Pedestal Image Stage */}
-              <div className="h-64 sm:h-72 bg-gradient-to-b from-[#F7FAFC] via-[#EEF4F7] to-[#E2EEF2] p-4 flex items-center justify-center relative overflow-hidden border-b border-[#DCE8E1]/80">
-                <span className="absolute top-3 left-3 bg-[#073B2A] text-white text-[9.5px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-lg z-10 shadow-md border border-white/20">
-                  {item.tag}
-                </span>
-
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-32 h-3 bg-black/15 rounded-full blur-md z-0"></div>
-
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="max-h-[85%] w-auto object-contain transition-transform duration-500 group-hover:scale-[1.05] drop-shadow-xl z-10 relative"
-                />
-              </div>
-
-              {/* Body Content */}
-              <div className="p-5 space-y-3 flex flex-col justify-between flex-grow">
-                <div className="space-y-1.5">
-                  <span className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#0B6B50] block leading-none">
-                    {item.category}
-                  </span>
-                  
-                  <h4 className="text-sm font-extrabold text-[#073B2A] group-hover:text-[#0B6B50] transition-colors leading-tight uppercase tracking-tight">
-                    {item.title}
-                  </h4>
-                  
-                  <p className="text-[11px] text-[#65736C] font-medium leading-relaxed">
-                    {item.subtitle}
-                  </p>
-                </div>
-
-                {item.flavorBadges && (
-                  <div className="flex flex-wrap gap-1 pt-0.5">
-                    {item.flavorBadges.map((badge, bIdx) => (
-                      <span
-                        key={bIdx}
-                        className="px-2 py-0.5 rounded-md bg-[#EAF4F2] text-[#073B2A] text-[9px] font-extrabold border border-[#DCE8E1]"
-                      >
-                        {badge}
-                      </span>
-                    ))}
-                  </div>
-                )}
-
-                <div className="pt-2 border-t border-[#DCE8E1]">
-                  <button
-                    onClick={() => handleNavClick('contact')}
-                    className="inline-flex items-center text-[10.5px] font-extrabold uppercase tracking-wider text-[#073B2A] group-hover:text-[#0B6B50] transition-colors"
-                  >
-                    <span>INQUIRE PRODUCT LINE</span>
-                    <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
 
