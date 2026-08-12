@@ -231,7 +231,7 @@ export default function ProductsPage({ setCurrentPage }) {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white uppercase leading-tight font-sans">
-              BEVERAGE PORTFOLIO &amp; PRODUCT CATALOGUE
+              BEVERAGE PORTFOLIO &amp; PRODUCTS
             </h1>
 
             <p className="text-base sm:text-xl text-[#DCE8E1] font-medium leading-relaxed max-w-3xl">
@@ -404,14 +404,10 @@ export default function ProductsPage({ setCurrentPage }) {
 
       </section>
 
-      {/* 3. COMPACT 5-CATEGORY PRODUCT CATALOGUE GRID (NO GIANT HERO REPETITIONS) */}
-      <section className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10 space-y-8 pt-4">
+      {/* 3. COMPACT 5-CATEGORY PRODUCT CATALOGUE GRID */}
+      <section className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10 space-y-6 pt-4">
         
-        <div className="space-y-2">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#EAF4F2] text-[#073B2A] text-xs font-extrabold uppercase tracking-wider border border-[#DCE8E1]">
-            <Layers className="w-3.5 h-3.5 text-[#0B6B50]" />
-            <span>FULL PRODUCT CATALOGUE</span>
-          </div>
+        <div className="space-y-1">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#073B2A] uppercase tracking-tight">
             BEVERAGE PRODUCT LINES (CATEGORIES 01 TO 05)
           </h2>
