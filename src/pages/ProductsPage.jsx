@@ -133,38 +133,43 @@ export default function ProductsPage({ setCurrentPage }) {
   const realDeliverables = [
     {
       title: 'GOOD GIVING WATER & RIBBONS & BALLOONS',
-      category: 'Packaged Drinking Water (Core Business)',
+      category: 'Packaged Drinking Water',
       subtitle: 'Custom PET & Glass Bottling for Good Giving Water & Ribbons & Balloons The Cake Shop',
       image: '/images/uploaded/bottle_good_giving.jpg',
-      tag: 'Water Core Business'
+      tag: 'Water Core Business',
+      flavorBadges: ['Added Minerals', 'Custom PET & Glass']
     },
     {
       title: 'COCO FUSE.',
-      category: 'Coconut Water + Fruit Hydration (1 Product, 3 Flavors)',
-      subtitle: 'Mango Refresh • Watermelon Mint Reset • Basil Chili Revive (0% Added Sugar)',
+      category: 'Coconut Water + Fruit Hydration',
+      subtitle: 'Mango Refresh • Watermelon Mint Reset • Basil Chili Revive (0% Sugar)',
       image: '/images/uploaded/bottle_cocofuse_mango.jpg',
-      tag: 'Coconut Hydration Line'
+      tag: 'Coconut Hydration',
+      flavorBadges: ['Mango', 'Watermelon', 'Basil Chili']
     },
     {
       title: 'YOUNG MONK FRUIT SPLASH',
-      category: 'Fruit Beverage Product Line (1 Product, 3 Flavors)',
+      category: 'Fruit Beverage Product Line',
       subtitle: 'Strawberry Raspberry • Apple Blueberry • Orange Lime (With B-Vitamins)',
       image: '/images/uploaded/bottle_fruit_splash.jpg',
-      tag: 'Fruit Beverage Line'
+      tag: 'Fruit Beverage Line',
+      flavorBadges: ['Strawberry', 'Blueberry', 'Orange Lime']
     },
     {
       title: 'BASIL FRESH',
-      category: 'Basil Seed Drink (1 Product, 4 Flavors)',
+      category: 'Basil Seed Drink',
       subtitle: 'Pink Guava • Orange • Blueberry • Mango (Glass Bottled)',
       image: '/images/uploaded/bottle_basil_fresh.jpg',
-      tag: 'Basil Seed Line'
+      tag: 'Basil Seed Line',
+      flavorBadges: ['Pink Guava', 'Orange', 'Blueberry', 'Mango']
     },
     {
       title: 'TISORA™ HyTEA',
-      category: 'Hydration Ice Tea (1 Product, 2 Flavors)',
+      category: 'Hydration Ice Tea',
       subtitle: 'Lemon Mint Sage & Juicy Peach (Electrolyte Hydration Ice Tea)',
       image: '/images/uploaded/bottle_tisora_pair.jpg',
-      tag: 'Hydration Ice Tea'
+      tag: 'Hydration Ice Tea',
+      flavorBadges: ['Lemon Mint Sage', 'Juicy Peach']
     },
   ];
 
@@ -178,7 +183,6 @@ export default function ProductsPage({ setCurrentPage }) {
       {/* LUXURY HERO HEADER SECTION */}
       <section className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="bg-gradient-to-r from-[#002B40] via-[#003D5B] to-[#002B40] text-white rounded-3xl p-8 sm:p-14 lg:p-16 border border-[#00A8B5]/30 shadow-2xl relative overflow-hidden">
-          {/* Subtle Ambient Background Light Glow */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#00A8B5]/15 rounded-full filter blur-3xl pointer-events-none"></div>
           <div className="absolute inset-0 opacity-10 bg-industrial-grid"></div>
           
@@ -470,7 +474,7 @@ export default function ProductsPage({ setCurrentPage }) {
         })}
       </section>
 
-      {/* LUXURY REAL DELIVERABLES & CLIENT PRODUCTS SHOWCASE GRID */}
+      {/* ULTRA-PREMIUM EDITORIAL REAL DELIVERABLES PORTFOLIO GRID */}
       <section className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10 space-y-10">
         <div className="space-y-3">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#E6F7F8] text-[#003D5B] text-xs font-extrabold uppercase tracking-wider border border-[#BDE7EA]">
@@ -485,35 +489,72 @@ export default function ProductsPage({ setCurrentPage }) {
           </p>
         </div>
 
+        {/* 5-COLUMN EDITORIAL PORTFOLIO CARDS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {realDeliverables.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-3xl border border-[#DCE6ED] overflow-hidden shadow-sm hover:shadow-xl hover:border-[#00A8B5] transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white rounded-3xl border border-[#DCE6ED] border-t-4 border-t-[#003D5B] hover:border-t-[#00A8B5] hover:border-[#00A8B5] shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden group relative"
             >
-              {/* Image Container */}
-              <div className="h-64 bg-gradient-to-b from-[#F5F8FA] via-[#EBF3F5] to-[#E0EFF2] p-5 flex items-center justify-center relative overflow-hidden">
-                <span className="absolute top-3 left-3 bg-[#003D5B] text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-lg z-10 shadow-sm border border-white/20">
+              {/* Studio Pedestal Image Stage */}
+              <div className="h-72 sm:h-80 bg-gradient-to-b from-[#F7FAFC] via-[#EEF4F7] to-[#E2EEF2] p-5 flex items-center justify-center relative overflow-hidden border-b border-[#DCE6ED]/80">
+                {/* Floating Top Badge */}
+                <span className="absolute top-4 left-4 bg-[#003D5B] text-white text-[9.5px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-xl z-10 shadow-md border border-white/20">
                   {item.tag}
                 </span>
+
+                {/* Studio Pedestal Shadow Disc */}
+                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-36 h-3 bg-black/15 rounded-full blur-md z-0"></div>
+
+                {/* Bottle Photography */}
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="max-h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md"
+                  className="max-h-[85%] w-auto object-contain transition-transform duration-500 group-hover:scale-[1.05] drop-shadow-xl z-10 relative"
                 />
               </div>
 
-              {/* Text Info */}
-              <div className="p-5 space-y-2">
-                <span className="text-[10.5px] font-extrabold uppercase tracking-widest text-[#00A8B5] block">
-                  {item.category}
-                </span>
-                <h4 className="text-base font-extrabold text-[#003D5B] leading-tight">
-                  {item.title}
-                </h4>
-                <p className="text-xs text-[#4A6070] font-medium">
-                  {item.subtitle}
-                </p>
+              {/* Card Content Body */}
+              <div className="p-6 space-y-4 flex flex-col justify-between flex-grow">
+                <div className="space-y-2">
+                  <span className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#00A8B5] block leading-none">
+                    {item.category}
+                  </span>
+                  
+                  <h4 className="text-base sm:text-lg font-extrabold text-[#003D5B] group-hover:text-[#00A8B5] transition-colors leading-tight uppercase tracking-tight">
+                    {item.title}
+                  </h4>
+                  
+                  <p className="text-xs text-[#4A6070] font-medium leading-relaxed">
+                    {item.subtitle}
+                  </p>
+                </div>
+
+                {/* Flavor Badges Pills */}
+                {item.flavorBadges && (
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {item.flavorBadges.map((badge, bIdx) => (
+                      <span
+                        key={bIdx}
+                        className="px-2.5 py-0.5 rounded-md bg-[#E6F7F8] text-[#003D5B] text-[9.5px] font-extrabold border border-[#BDE7EA]"
+                      >
+                        {badge}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Bottom Action CTA Link */}
+                <div className="pt-3 border-t border-[#DCE6ED]">
+                  <button
+                    onClick={() => handleNavClick('contact')}
+                    className="inline-flex items-center text-[11px] font-extrabold uppercase tracking-wider text-[#003D5B] group-hover:text-[#00A8B5] transition-colors"
+                  >
+                    <span>INQUIRE PRODUCT LINE</span>
+                    <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+
               </div>
             </div>
           ))}
