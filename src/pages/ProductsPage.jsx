@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Package,
   ArrowRight,
@@ -9,7 +9,6 @@ import {
   Crown,
   ChevronRight,
   Layers,
-  ArrowLeft,
   Check,
   FileText,
   Sparkles,
@@ -19,26 +18,33 @@ import {
 } from 'lucide-react';
 
 export default function ProductsPage({ setCurrentPage }) {
-  // Active selected product line index
-  const [selectedProductIndex, setSelectedProductIndex] = useState(1); // Default to COCO FUSE (Index 1)
 
   const handleNavClick = (pageId) => {
     setCurrentPage(pageId);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Comprehensive Product Lines Catalog Data
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  // Comprehensive Product Lines Catalog Data (All 5 Products Rendered Sequentially)
   const products = [
     {
       id: '01',
+      sectionId: 'product-water',
       key: 'water',
       isCoreBusiness: true,
-      categoryBadge: 'CATEGORY 01 — CORE BUSINESS',
+      categoryBadge: 'CATEGORY 01 — PRIMARY CORE BUSINESS',
       title: '01 — PACKAGED DRINKING WATER',
       subtitle: 'PRIMARY CORE BUSINESS & BOTTLING FACILITY LINES',
       shortTitle: 'Packaged Drinking Water',
       description: 'Our primary manufacturing capability — ultra-purified packaged drinking water enriched with balanced minerals, produced on high-speed automated lines under multi-barrier Reverse Osmosis (RO), micro-filtration, and UV sterilization.',
       mainImage: '/images/uploaded/bottle_good_giving.jpg',
+      altImages: ['/images/uploaded/bottle_ribbons_balloons.jpg', '/images/uploaded/bottle_hydro.jpg', '/images/uploaded/carton_lafayette.jpg'],
       fruitElements: [
         { emoji: '💧', label: 'Purified Water' },
         { emoji: '✨', label: 'Added Minerals' },
@@ -71,6 +77,7 @@ export default function ProductsPage({ setCurrentPage }) {
     },
     {
       id: '04',
+      sectionId: 'product-cocofuse',
       key: 'cocofuse',
       isCoreBusiness: false,
       categoryBadge: 'CATEGORY 04 — FUNCTIONAL HYDRATION',
@@ -79,6 +86,7 @@ export default function ProductsPage({ setCurrentPage }) {
       shortTitle: 'COCO FUSE. Coconut Water',
       description: 'A single premium functional coconut water hydration product combining pure coconut water with natural fruit hydration across three distinct flavour variants.',
       mainImage: '/images/uploaded/bottle_cocofuse_mango.jpg',
+      altImages: ['/images/uploaded/bottle_cocofuse_watermelon.jpg', '/images/uploaded/bottle_cocofuse_basil.jpg'],
       fruitElements: [
         { emoji: '🥥', label: 'Pure Coconut Water' },
         { emoji: '🥭', label: 'Fresh Mango' },
@@ -113,6 +121,7 @@ export default function ProductsPage({ setCurrentPage }) {
     },
     {
       id: '02',
+      sectionId: 'product-fruit-splash',
       key: 'fruit-splash',
       isCoreBusiness: false,
       categoryBadge: 'CATEGORY 02 — FRUIT BEVERAGES',
@@ -152,6 +161,7 @@ export default function ProductsPage({ setCurrentPage }) {
     },
     {
       id: '03',
+      sectionId: 'product-hytea',
       key: 'hytea',
       isCoreBusiness: false,
       categoryBadge: 'CATEGORY 03 — HYDRATION ICE TEA',
@@ -189,6 +199,7 @@ export default function ProductsPage({ setCurrentPage }) {
     },
     {
       id: '05',
+      sectionId: 'product-basil-fresh',
       key: 'basil-fresh',
       isCoreBusiness: false,
       categoryBadge: 'CATEGORY 05 — BASIL SEED BEVERAGE',
@@ -272,266 +283,246 @@ export default function ProductsPage({ setCurrentPage }) {
     },
   ];
 
-  const currentProduct = products[selectedProductIndex];
-
   return (
     <div className="pt-28 sm:pt-32 pb-24 bg-[#FAFBFD] text-[#17211D] font-sans antialiased space-y-16 lg:space-y-24">
       
-      {/* CONCEPT 5: DARK FOREST GREEN RICH HERO BANNER */}
-      <section className="bg-gradient-to-r from-[#05291D] via-[#073B2A] to-[#05291D] text-white relative overflow-hidden shadow-xl border-b border-[#0B6B50]/30">
-        
-        {/* Ambient Background Lighting */}
-        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#0B6B50]/30 rounded-full filter blur-3xl pointer-events-none"></div>
-        <div className="absolute inset-0 opacity-10 bg-industrial-grid"></div>
-
-        <div className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10 py-8 sm:py-12 lg:py-16 min-h-[500px] lg:min-h-[560px] flex flex-col justify-between relative z-10 space-y-8">
-          
-          {/* Top Navigation & Product Selector Switcher */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-medium text-white/80 pb-4 border-b border-white/15">
-            <div className="flex items-center space-x-2">
-              <button onClick={() => handleNavClick('home')} className="hover:text-white transition-colors">
-                Home
-              </button>
-              <span>/</span>
-              <button onClick={() => handleNavClick('products')} className="hover:text-white transition-colors">
-                Products
-              </button>
-              <span>/</span>
-              <span className="text-white font-bold">{currentProduct.shortTitle}</span>
-            </div>
-
-            {/* Product Line Selector Pills */}
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#DCE8E1] mr-1 hidden lg:inline">
-                Select Product Line:
-              </span>
-              {products.map((p, pIdx) => (
-                <button
-                  key={p.id}
-                  onClick={() => setSelectedProductIndex(pIdx)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap flex items-center space-x-1.5 ${
-                    selectedProductIndex === pIdx
-                      ? 'bg-white text-[#073B2A] shadow-md ring-2 ring-[#0B6B50]'
-                      : 'bg-white/10 text-white hover:bg-white/20 border border-white/10'
-                  }`}
-                >
-                  {p.isCoreBusiness && <Star className="w-3 h-3 text-[#EAB308] fill-current" />}
-                  <span>{p.shortTitle}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Main Hero Content 2-Column Composition */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
-            {/* HERO LEFT: Information */}
-            <div className="lg:col-span-7 space-y-6">
-              
-              {/* Category Badge */}
-              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-[#0B6B50] text-white text-xs font-mono font-extrabold tracking-widest uppercase shadow-sm border border-white/20">
-                <span>{currentProduct.categoryBadge}</span>
-              </div>
-
-              {/* Main Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white uppercase leading-[1.05]">
-                {currentProduct.title}
-              </h1>
-
-              {/* Sub-tagline */}
-              <p className="text-xs sm:text-sm font-extrabold text-[#DCE8E1] uppercase tracking-[0.2em]">
-                {currentProduct.subtitle}
-              </p>
-
-              {/* Concise Description */}
-              <p className="text-base sm:text-lg text-white/95 leading-relaxed font-medium max-w-2xl">
-                {currentProduct.description}
-              </p>
-
-              {/* Fruit Element Micro Badges */}
-              <div className="flex flex-wrap gap-2.5 pt-2">
-                {currentProduct.fruitElements.map((elem, idx) => (
-                  <span
-                    key={idx}
-                    className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-xl bg-white/10 backdrop-blur-md text-white text-xs font-bold border border-white/20 shadow-xs"
-                  >
-                    <span className="text-sm">{elem.emoji}</span>
-                    <span>{elem.label}</span>
-                  </span>
-                ))}
-              </div>
-
-            </div>
-
-            {/* HERO RIGHT: Product Bottle Stage */}
-            <div className="lg:col-span-5 relative flex items-center justify-center min-h-[340px] sm:min-h-[400px]">
-              <div className="relative w-full max-w-md h-full flex items-center justify-center">
-                
-                {/* Stage Light Glow */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B6B50]/50 via-transparent to-transparent rounded-full filter blur-3xl pointer-events-none"></div>
-
-                {/* Product Bottle Image */}
-                <img
-                  src={currentProduct.mainImage}
-                  alt={currentProduct.title}
-                  className="h-[340px] sm:h-[400px] lg:h-[440px] w-auto object-contain drop-shadow-2xl z-10 transition-transform duration-500 hover:scale-105"
-                />
-
-                {/* Soft Pedestal Shadow Disc */}
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-48 h-4 bg-black/35 rounded-full blur-md z-0"></div>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Footer Bar Link */}
-          <div className="pt-4 border-t border-white/15 flex items-center justify-between text-xs text-white/70">
-            <button
-              onClick={() => handleNavClick('products')}
-              className="hover:text-white transition-colors flex items-center space-x-1 font-bold"
-            >
-              <span>← Back to All Product Categories</span>
-            </button>
-            <span className="text-xs font-mono text-[#DCE8E1]">PURE FOODS &amp; BEVERAGES • MAHAPE MIDC NAVI MUMBAI</span>
-          </div>
-
-        </div>
-      </section>
-
-      {/* INFORMATION SECTION IMMEDIATELY BELOW HERO (3 RICH HORIZONTAL CARDS) */}
+      {/* PAGE HEADER & QUICK ANCHOR JUMP BAR */}
       <section className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="bg-gradient-to-r from-[#05291D] via-[#073B2A] to-[#05291D] text-white rounded-3xl p-8 sm:p-12 lg:p-14 border border-[#0B6B50]/30 shadow-2xl relative overflow-hidden space-y-6">
           
-          {/* CARD 1: FLAVOUR VARIANTS */}
-          <div className="bg-white rounded-3xl p-7 sm:p-8 border border-[#DCE8E1] shadow-sm hover:shadow-xl hover:border-[#0B6B50] transition-all space-y-5">
-            <div className="flex items-center space-x-2.5">
-              <div className="p-2 rounded-xl bg-[#EAF4F2] text-[#073B2A]">
-                <Sparkles className="w-5 h-5 text-[#0B6B50]" />
-              </div>
-              <h3 className="text-sm font-extrabold uppercase tracking-widest text-[#073B2A]">
-                FLAVOUR VARIANTS
-              </h3>
+          <div className="relative z-10 max-w-4xl space-y-4">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#0B6B50] text-white text-xs font-extrabold uppercase tracking-widest border border-white/20">
+              <Crown className="w-4 h-4 fill-current text-white" />
+              <span>PURE FOODS &amp; BEVERAGES • FULL PRODUCT CATALOGUE</span>
             </div>
 
-            <div className="space-y-3 pt-1">
-              {currentProduct.flavors.map((flv, idx) => (
-                <div key={idx} className="flex items-center space-x-3 text-xs sm:text-sm font-bold text-[#17211D] p-2.5 rounded-xl bg-[#FAFBFD] border border-[#DCE8E1]">
-                  <span
-                    className="w-3 h-3 rounded-full shrink-0 shadow-sm"
-                    style={{ backgroundColor: flv.color }}
-                  ></span>
-                  <span>{flv.name}</span>
-                </div>
-              ))}
-            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white uppercase leading-tight">
+              ALL PRODUCTS &amp; MANUFACTURING LINES
+            </h1>
+
+            <p className="text-base sm:text-xl text-[#DCE8E1] font-medium leading-relaxed max-w-3xl">
+              Explore our complete B2B manufacturing portfolio across Packaged Drinking Water (Primary Core Business), COCO FUSE. Coconut Hydration, Young Monk Fruit Splash, Tisora HyTEA, and Basil Fresh.
+            </p>
           </div>
 
-          {/* CARD 2: PACKAGING & FORMATS */}
-          <div className="bg-white rounded-3xl p-7 sm:p-8 border border-[#DCE8E1] shadow-sm hover:shadow-xl hover:border-[#0B6B50] transition-all space-y-5">
-            <div className="flex items-center space-x-2.5">
-              <div className="p-2 rounded-xl bg-[#EAF4F2] text-[#073B2A]">
-                <Package className="w-5 h-5 text-[#0B6B50]" />
-              </div>
-              <h3 className="text-sm font-extrabold uppercase tracking-widest text-[#073B2A]">
-                PACKAGING &amp; FORMATS
-              </h3>
-            </div>
-
-            <div className="space-y-4 pt-1">
-              <div className="p-3 rounded-xl bg-[#FAFBFD] border border-[#DCE8E1]">
-                <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#0B6B50] block">
-                  BOTTLE SPECIFICATION
-                </span>
-                <span className="text-xs sm:text-sm font-extrabold text-[#073B2A] mt-0.5 block">
-                  {currentProduct.packaging}
-                </span>
-              </div>
-
-              <div className="p-3 rounded-xl bg-[#FAFBFD] border border-[#DCE8E1]">
-                <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#0B6B50] block">
-                  PRODUCTION FORMAT
-                </span>
-                <span className="text-xs sm:text-sm font-extrabold text-[#073B2A] mt-0.5 block">
-                  {currentProduct.format}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* CARD 3: KEY FEATURES */}
-          <div className="bg-white rounded-3xl p-7 sm:p-8 border border-[#DCE8E1] shadow-sm hover:shadow-xl hover:border-[#0B6B50] transition-all space-y-5">
-            <div className="flex items-center space-x-2.5">
-              <div className="p-2 rounded-xl bg-[#EAF4F2] text-[#073B2A]">
-                <CheckCircle2 className="w-5 h-5 text-[#0B6B50]" />
-              </div>
-              <h3 className="text-sm font-extrabold uppercase tracking-widest text-[#073B2A]">
-                KEY FEATURES
-              </h3>
-            </div>
-
-            <div className="space-y-2.5 pt-1">
-              {currentProduct.features.map((feat, idx) => (
-                <div key={idx} className="flex items-center space-x-2.5 text-xs sm:text-sm font-semibold text-[#17211D]">
-                  <Check className="w-4 h-4 text-[#0B6B50] shrink-0" />
-                  <span>{feat}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* CTA SECTION & FORMULATION NOTE */}
-      <section className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10 text-center space-y-4">
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            onClick={() => handleNavClick('contact')}
-            className="h-[52px] px-8 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white bg-[#073B2A] hover:bg-[#0B6B50] rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center space-x-2 group w-full sm:w-auto"
-          >
-            <span>DISCUSS THIS PRODUCT</span>
-            <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
-          </button>
-
-          <button
-            onClick={() => handleNavClick('contact')}
-            className="h-[52px] px-8 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#073B2A] bg-white hover:bg-[#EAF4F2] border-2 border-[#073B2A] rounded-xl transition-colors flex items-center justify-center space-x-2 w-full sm:w-auto"
-          >
-            <FileText className="w-4 h-4 text-[#0B6B50]" />
-            <span>REQUEST PRODUCT DETAILS</span>
-          </button>
-        </div>
-
-        <p className="text-xs text-[#65736C] italic font-medium">
-          *{currentProduct.formulationNote}
-        </p>
-      </section>
-
-      {/* PRODUCT SPECIFICATIONS & TECHNICAL DATA TABLE */}
-      <section className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-[#DCE8E1] shadow-sm space-y-8">
-          <div className="space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#0B6B50] block">
-              Technical Data Overview
+          {/* Quick Anchor Scroll Bar */}
+          <div className="pt-4 border-t border-white/15 flex flex-wrap items-center gap-2.5 relative z-10">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#DCE8E1] mr-1">
+              Quick Jump To Product:
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#073B2A] uppercase tracking-tight">
-              {currentProduct.shortTitle} Specifications
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {currentProduct.specs.map((spec, sIdx) => (
-              <div key={sIdx} className="p-4 sm:p-5 rounded-2xl bg-[#FAFBFD] border border-[#DCE8E1] flex items-center justify-between">
-                <span className="text-xs font-bold text-[#65736C] uppercase tracking-wider">{spec.label}</span>
-                <span className="text-xs sm:text-sm font-extrabold text-[#073B2A] text-right">{spec.value}</span>
-              </div>
+            {products.map((p) => (
+              <button
+                key={p.id}
+                onClick={() => scrollToSection(p.sectionId)}
+                className="px-3.5 py-2 rounded-xl text-xs font-bold bg-white/10 hover:bg-white text-white hover:text-[#073B2A] border border-white/15 transition-all flex items-center space-x-1.5"
+              >
+                {p.isCoreBusiness && <Star className="w-3.5 h-3.5 text-[#EAB308] fill-current" />}
+                <span>{p.shortTitle}</span>
+              </button>
             ))}
           </div>
+
         </div>
       </section>
 
+      {/* RENDER ALL 5 PRODUCTS SEQUENTIALLY DOWN THE PAGE */}
+      <div className="space-y-20 lg:space-y-28">
+        {products.map((prod) => (
+          <div key={prod.id} id={prod.sectionId} className="space-y-10 scroll-mt-32">
+            
+            {/* PRODUCT HERO BANNER */}
+            <section className="bg-gradient-to-r from-[#05291D] via-[#073B2A] to-[#05291D] text-white relative overflow-hidden shadow-xl border-b border-[#0B6B50]/30">
+              
+              <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#0B6B50]/30 rounded-full filter blur-3xl pointer-events-none"></div>
+              <div className="absolute inset-0 opacity-10 bg-industrial-grid"></div>
+
+              <div className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10 py-8 sm:py-12 lg:py-14 min-h-[480px] lg:min-h-[520px] flex flex-col justify-between relative z-10 space-y-6">
+                
+                {/* 2-Column Composition */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                  
+                  {/* HERO LEFT: Text Information */}
+                  <div className="lg:col-span-7 space-y-5">
+                    
+                    <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-[#0B6B50] text-white text-xs font-mono font-extrabold tracking-widest uppercase shadow-sm border border-white/20">
+                      <span>{prod.categoryBadge}</span>
+                    </div>
+
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white uppercase leading-[1.05]">
+                      {prod.title}
+                    </h2>
+
+                    <p className="text-xs sm:text-sm font-extrabold text-[#DCE8E1] uppercase tracking-[0.2em]">
+                      {prod.subtitle}
+                    </p>
+
+                    <p className="text-base text-white/95 leading-relaxed font-medium max-w-2xl">
+                      {prod.description}
+                    </p>
+
+                    {/* Fruit Element Micro Badges */}
+                    <div className="flex flex-wrap gap-2.5 pt-1">
+                      {prod.fruitElements.map((elem, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-md text-white text-xs font-bold border border-white/20 shadow-xs"
+                        >
+                          <span className="text-sm">{elem.emoji}</span>
+                          <span>{elem.label}</span>
+                        </span>
+                      ))}
+                    </div>
+
+                  </div>
+
+                  {/* HERO RIGHT: Product Bottle Visual Stage */}
+                  <div className="lg:col-span-5 relative flex items-center justify-center min-h-[320px] sm:min-h-[380px]">
+                    <div className="relative w-full max-w-md h-full flex items-center justify-center">
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B6B50]/50 via-transparent to-transparent rounded-full filter blur-3xl pointer-events-none"></div>
+
+                      <img
+                        src={prod.mainImage}
+                        alt={prod.title}
+                        className="h-[320px] sm:h-[380px] lg:h-[420px] w-auto object-contain drop-shadow-2xl z-10 transition-transform duration-500 hover:scale-105"
+                      />
+
+                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-48 h-4 bg-black/35 rounded-full blur-md z-0"></div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </section>
+
+            {/* 3 COMPACT INFORMATION CARDS BELOW HERO */}
+            <section className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                
+                {/* CARD 1: FLAVOUR VARIANTS */}
+                <div className="bg-white rounded-3xl p-7 sm:p-8 border border-[#DCE8E1] shadow-sm hover:shadow-xl hover:border-[#0B6B50] transition-all space-y-5">
+                  <div className="flex items-center space-x-2.5">
+                    <div className="p-2 rounded-xl bg-[#EAF4F2] text-[#073B2A]">
+                      <Sparkles className="w-5 h-5 text-[#0B6B50]" />
+                    </div>
+                    <h3 className="text-sm font-extrabold uppercase tracking-widest text-[#073B2A]">
+                      FLAVOUR VARIANTS
+                    </h3>
+                  </div>
+
+                  <div className="space-y-3 pt-1">
+                    {prod.flavors.map((flv, idx) => (
+                      <div key={idx} className="flex items-center space-x-3 text-xs sm:text-sm font-bold text-[#17211D] p-2.5 rounded-xl bg-[#FAFBFD] border border-[#DCE8E1]">
+                        <span
+                          className="w-3 h-3 rounded-full shrink-0 shadow-sm"
+                          style={{ backgroundColor: flv.color }}
+                        ></span>
+                        <span>{flv.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CARD 2: PACKAGING & FORMATS */}
+                <div className="bg-white rounded-3xl p-7 sm:p-8 border border-[#DCE8E1] shadow-sm hover:shadow-xl hover:border-[#0B6B50] transition-all space-y-5">
+                  <div className="flex items-center space-x-2.5">
+                    <div className="p-2 rounded-xl bg-[#EAF4F2] text-[#073B2A]">
+                      <Package className="w-5 h-5 text-[#0B6B50]" />
+                    </div>
+                    <h3 className="text-sm font-extrabold uppercase tracking-widest text-[#073B2A]">
+                      PACKAGING &amp; FORMATS
+                    </h3>
+                  </div>
+
+                  <div className="space-y-4 pt-1">
+                    <div className="p-3 rounded-xl bg-[#FAFBFD] border border-[#DCE8E1]">
+                      <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#0B6B50] block">
+                        BOTTLE SPECIFICATION
+                      </span>
+                      <span className="text-xs sm:text-sm font-extrabold text-[#073B2A] mt-0.5 block">
+                        {prod.packaging}
+                      </span>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-[#FAFBFD] border border-[#DCE8E1]">
+                      <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#0B6B50] block">
+                        PRODUCTION FORMAT
+                      </span>
+                      <span className="text-xs sm:text-sm font-extrabold text-[#073B2A] mt-0.5 block">
+                        {prod.format}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CARD 3: KEY FEATURES */}
+                <div className="bg-white rounded-3xl p-7 sm:p-8 border border-[#DCE8E1] shadow-sm hover:shadow-xl hover:border-[#0B6B50] transition-all space-y-5">
+                  <div className="flex items-center space-x-2.5">
+                    <div className="p-2 rounded-xl bg-[#EAF4F2] text-[#073B2A]">
+                      <CheckCircle2 className="w-5 h-5 text-[#0B6B50]" />
+                    </div>
+                    <h3 className="text-sm font-extrabold uppercase tracking-widest text-[#073B2A]">
+                      KEY FEATURES
+                    </h3>
+                  </div>
+
+                  <div className="space-y-2.5 pt-1">
+                    {prod.features.map((feat, idx) => (
+                      <div key={idx} className="flex items-center space-x-2.5 text-xs sm:text-sm font-semibold text-[#17211D]">
+                        <Check className="w-4 h-4 text-[#0B6B50] shrink-0" />
+                        <span>{feat}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            </section>
+
+            {/* CTA BUTTONS & SPECIFICATIONS DATA TABLE FOR PRODUCT */}
+            <section className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10 space-y-6">
+              
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+                <button
+                  onClick={() => handleNavClick('contact')}
+                  className="h-[52px] px-8 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white bg-[#073B2A] hover:bg-[#0B6B50] rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center space-x-2 group w-full sm:w-auto"
+                >
+                  <span>DISCUSS {prod.shortTitle}</span>
+                  <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+                </button>
+
+                <button
+                  onClick={() => handleNavClick('contact')}
+                  className="h-[52px] px-8 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#073B2A] bg-white hover:bg-[#EAF4F2] border-2 border-[#073B2A] rounded-xl transition-colors flex items-center justify-center space-x-2 w-full sm:w-auto"
+                >
+                  <FileText className="w-4 h-4 text-[#0B6B50]" />
+                  <span>REQUEST SPECIFICATIONS</span>
+                </button>
+              </div>
+
+              {/* Technical Specifications Box */}
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#DCE8E1] shadow-xs space-y-4">
+                <h4 className="text-sm font-extrabold text-[#073B2A] uppercase tracking-wider">
+                  {prod.shortTitle} Specifications Data
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {prod.specs.map((spec, sIdx) => (
+                    <div key={sIdx} className="p-3.5 rounded-xl bg-[#FAFBFD] border border-[#DCE8E1] flex items-center justify-between">
+                      <span className="text-xs font-bold text-[#65736C] uppercase tracking-wider">{spec.label}</span>
+                      <span className="text-xs sm:text-sm font-extrabold text-[#073B2A] text-right">{spec.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </section>
+
+          </div>
+        ))}
+      </div>
+
       {/* REAL PRIVATE LABEL DELIVERABLES PORTFOLIO GRID */}
-      <section className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10 space-y-10">
+      <section className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10 space-y-10 pt-8">
         <div className="space-y-3">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#EAF4F2] text-[#073B2A] text-xs font-extrabold uppercase tracking-wider border border-[#DCE8E1]">
             <Layers className="w-4 h-4 text-[#0B6B50]" />
