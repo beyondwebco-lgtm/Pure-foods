@@ -168,6 +168,62 @@ export default function ProductsPage({ setCurrentPage }) {
         { label: 'Packaging Format', value: '250ml Conical Glass Bottle with Crown Cap' },
         { label: 'Textural Feature', value: 'Suspended Natural Basil Seeds' }
       ]
+    },
+    {
+      id: '06',
+      sectionId: 'product-06',
+      key: 'flavoured-beverages',
+      isCoreBusiness: false,
+      categoryBadge: 'CATEGORY 06 — FLAVOURED BEVERAGES',
+      title: '06 — OOO FLAVOURED BEVERAGES',
+      subtitle: 'FLAVOURED BEVERAGE PRODUCT LINE (LEMON, PAN & JEERA)',
+      shortTitle: 'OOO Flavoured Beverages',
+      description: 'Refreshing classic and customized flavoured beverages formulated with food-grade emulsions, natural extracts, and balanced sweetness across eco-friendly cartons and bottle formats.',
+      mainImage: '/images/uploaded/carton_ooo.jpg',
+      flavors: ['Classic Lemon', 'Pan Masala Infusion', 'Jeera Masala', 'Custom Spice Profiles'],
+      packaging: '250ml & 350ml Cartons / PET Bottles',
+      format: 'Carton & Bottle Packaging Solutions',
+      features: [
+        'Precision flavor dosing & liquid syrup blending',
+        'Food-grade botanical & spice extracts',
+        'Eco-friendly paperboard carton & PET bottle formats',
+        'FSSAI compliant high-speed automated filling'
+      ],
+      specs: [
+        { label: 'Product Category', value: 'Flavoured Beverages' },
+        { label: 'Flavor Variants', value: 'Lemon, Pan Masala, Jeera & Custom Flavours' },
+        { label: 'Packaging Format', value: '250ml & 350ml Cartons & PET Bottles' },
+        { label: 'Shelf Life', value: '6 Months (Ambient Storage)' }
+      ]
+    },
+    {
+      id: '07',
+      sectionId: 'product-07',
+      key: 'apple-cider-vinegar',
+      isCoreBusiness: false,
+      categoryBadge: 'CATEGORY 07 — HEALTH & WELLNESS',
+      title: '07 — PURE PRESS APPLE CIDER VINEGAR',
+      subtitle: 'REFINED FOR COOKING. TRUSTED FOR HEALTH.',
+      shortTitle: 'Pure Press Apple Cider Vinegar',
+      description: '100% Natural Fermented Product made from the finest quality apples. Refined & Pure — supports digestion, weight management, blood sugar control, and culinary marinades.',
+      mainImage: '/images/uploaded/bottle_pure_press.png',
+      posterImage: '/images/uploaded/poster_apple_cider.jpg',
+      flavors: ['100% Natural Fermented Apple Cider'],
+      packaging: '500ml PET Bottle',
+      format: '500ml Ergonomic PET Bottle',
+      features: [
+        '100% Natural Fermented Product from finest apples',
+        'Boosts digestion, gut health & metabolism',
+        'Supports natural weight management & immunity',
+        'Packed under strict hygiene & FSSAI safety standards'
+      ],
+      specs: [
+        { label: 'Brand Name', value: 'PURE PRESS' },
+        { label: 'Product Type', value: 'Refined Apple Cider Vinegar' },
+        { label: 'Pack Size', value: '500 mL PET Bottle' },
+        { label: 'Shelf Life', value: '12 Months' },
+        { label: 'Quality Mark', value: 'Tested Certified' }
+      ]
     }
   ];
 
@@ -366,10 +422,10 @@ export default function ProductsPage({ setCurrentPage }) {
         
         <div className="space-y-1">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#073B2A] uppercase tracking-tight">
-            BEVERAGE PRODUCT LINES (CATEGORIES 01 TO 05)
+            BEVERAGE & HEALTH PRODUCT LINES (CATEGORIES 01 TO 07)
           </h2>
           <p className="text-sm text-[#65736C] max-w-2xl font-medium">
-            Compact overview of all 5 beverage manufacturing lines in strict numerical sequence.
+            Overview of all 7 commercial product &amp; manufacturing lines in numerical sequence.
           </p>
         </div>
 

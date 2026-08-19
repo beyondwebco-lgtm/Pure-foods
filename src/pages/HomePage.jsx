@@ -33,7 +33,7 @@ export default function HomePage({ setCurrentPage }) {
       num: '02',
       title: 'Fruit Drinks & Juices',
       desc: 'Fruit drinks, juices and fruit-based beverages developed to meet specific product requirements.',
-      image: '/images/uploaded/carton_lafayette.jpg',
+      image: '/images/uploaded/bottle_fruit_splash.jpg',
       target: 'products',
       tag: 'CUSTOM FORMULATIONS',
       imageFit: 'contain'
@@ -42,7 +42,7 @@ export default function HomePage({ setCurrentPage }) {
       num: '03',
       title: 'Flavoured Beverages',
       desc: 'Lemon, pan, jeera and customized flavoured beverage solutions in eco-friendly carton & bottle formats.',
-      image: '/images/uploaded/carton_ooo.jpg',
+      image: '/images/uploaded/bottle_tisora_peach.jpg',
       target: 'products',
       tag: 'CUSTOM FLAVOURS',
       imageFit: 'contain'
@@ -58,15 +58,6 @@ export default function HomePage({ setCurrentPage }) {
     },
     {
       num: '05',
-      title: 'Private Label Products',
-      desc: 'Turn-key manufacturing solutions for businesses launching beverages under their own brand.',
-      image: '/images/uploaded/carton_lafayette.jpg',
-      target: 'contract-manufacturing',
-      tag: 'CO-BRANDED & PRIVATE',
-      imageFit: 'contain'
-    },
-    {
-      num: '06',
       title: 'Contract Manufacturing',
       desc: 'End-to-end commercial production support from raw water treatment to finished packed goods.',
       image: '/images/hero_factory.png',
@@ -163,15 +154,15 @@ export default function HomePage({ setCurrentPage }) {
 
             </div>
 
-            {/* RIGHT COLUMN: DUAL PRODUCT CARD COMPOSITION WITH INTEGRATED PRIVATE LABEL STRIP */}
+            {/* RIGHT COLUMN: 3 PRODUCT CARD COMPOSITION (GLASS, PET & CARTON) WITH INTEGRATED PRIVATE LABEL STRIP */}
             <div className="lg:col-span-5 relative">
               <div className="bg-white/90 backdrop-blur-md rounded-2xl border-2 border-white shadow-2xl overflow-hidden p-2">
                 
-                {/* 2 TALL SIDE-BY-SIDE PRODUCT IMAGE CARDS */}
-                <div className="grid grid-cols-2 gap-2 h-[420px] sm:h-[480px]">
+                {/* 3 TALL SIDE-BY-SIDE PRODUCT IMAGE CARDS */}
+                <div className="grid grid-cols-3 gap-2 h-[420px] sm:h-[480px]">
                   
-                  {/* Left Card: HYDRO Bottle */}
-                  <div className="bg-[#F0F5F8] rounded-xl overflow-hidden relative flex items-center justify-center p-3 border border-[#DCE6ED] group/card">
+                  {/* Card 1: HYDRO Glass Bottle */}
+                  <div className="bg-[#F0F5F8] rounded-xl overflow-hidden relative flex items-center justify-center border border-[#DCE6ED] group/card">
                     <img
                       src="/images/uploaded/bottle_hydro.jpg"
                       alt="HYDRO Premium Glass Bottle"
@@ -179,8 +170,17 @@ export default function HomePage({ setCurrentPage }) {
                     />
                   </div>
 
-                  {/* Right Card: Galeries Lafayette Carton */}
-                  <div className="bg-[#F0F5F8] rounded-xl overflow-hidden relative flex items-center justify-center p-3 border border-[#DCE6ED] group/card">
+                  {/* Card 2: Good Giving PET Packaged Water Bottle */}
+                  <div className="bg-[#F0F5F8] rounded-xl overflow-hidden relative flex items-center justify-center border border-[#DCE6ED] group/card">
+                    <img
+                      src="/images/uploaded/bottle_good_giving.jpg"
+                      alt="Good Giving Packaged Water PET Bottle"
+                      className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500 rounded-lg"
+                    />
+                  </div>
+
+                  {/* Card 3: Galeries Lafayette Carton */}
+                  <div className="bg-[#F0F5F8] rounded-xl overflow-hidden relative flex items-center justify-center border border-[#DCE6ED] group/card">
                     <img
                       src="/images/uploaded/carton_lafayette.jpg"
                       alt="Galeries Lafayette Mumbai 350ml Carton"
