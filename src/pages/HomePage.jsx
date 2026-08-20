@@ -58,6 +58,15 @@ export default function HomePage({ setCurrentPage }) {
     },
     {
       num: '05',
+      title: 'Pure Press Apple Cider Vinegar',
+      desc: '100% natural fermented apple cider vinegar refined for cooking and daily digestion & health.',
+      image: '/images/uploaded/poster_apple_cider.jpg',
+      target: 'products',
+      tag: 'HEALTH & WELLNESS',
+      imageFit: 'contain'
+    },
+    {
+      num: '06',
       title: 'Contract Manufacturing',
       desc: 'End-to-end commercial production support from raw water treatment to finished packed goods.',
       image: '/images/hero_factory.png',

@@ -13,12 +13,19 @@ import {
   FileText,
   Sparkles,
   Droplets,
-  Filter
+  Filter,
+  Eye,
+  X,
+  Maximize2,
+  HeartPulse,
+  Utensils
 } from 'lucide-react';
 
 export default function ProductsPage({ setCurrentPage }) {
-  // Active selected product tab index (0 = Water, 1 = Fruit Splash, 2 = HyTea, 3 = Coco Fuse, 4 = Basil Fresh)
+  // Active selected product tab index (0 = Water, 1 = Fruit Splash, 2 = HyTea, 3 = Coco Fuse, 4 = Basil Fresh, 5 = OOO, 6 = Apple Cider Vinegar)
   const [activeTab, setActiveTab] = useState(0);
+  const [selectedPoster, setSelectedPoster] = useState(null);
+  const [stageViewMode, setStageViewMode] = useState('bottle'); // 'bottle' or 'poster'
 
   const handleNavClick = (pageId) => {
     setCurrentPage(pageId);
@@ -211,10 +218,22 @@ export default function ProductsPage({ setCurrentPage }) {
       flavors: ['100% Natural Fermented Apple Cider'],
       packaging: '500ml PET Bottle',
       format: '500ml Ergonomic PET Bottle',
+      healthBenefits: [
+        { name: 'Boosts Digestion', desc: 'Improves gut health & metabolism' },
+        { name: 'Weight Management', desc: 'Supports natural fat burning' },
+        { name: 'Blood Sugar Control', desc: 'Helps manage sugar levels' }
+      ],
+      culinaryUses: [
+        'Add to salads for tangy freshness',
+        'Use in marinades for meats & veggies',
+        'Mix with honey + warm water for a morning health drink',
+        'Perfect for pickles, sauces & chutneys'
+      ],
+      tagline: "Nature's Goodness in Every Drop!",
       features: [
         '100% Natural Fermented Product from finest apples',
-        'Boosts digestion, gut health & metabolism',
-        'Supports natural weight management & immunity',
+        'Refined & Pure — Perfect for cooking and wellness',
+        'Multi-purpose: digestion, weight management & immunity',
         'Packed under strict hygiene & FSSAI safety standards'
       ],
       specs: [
@@ -222,7 +241,8 @@ export default function ProductsPage({ setCurrentPage }) {
         { label: 'Product Type', value: 'Refined Apple Cider Vinegar' },
         { label: 'Pack Size', value: '500 mL PET Bottle' },
         { label: 'Shelf Life', value: '12 Months' },
-        { label: 'Quality Mark', value: 'Tested Certified' }
+        { label: 'Quality Mark', value: 'Tested Certified' },
+        { label: 'Inquiries', value: 'Purefoods.bev@gmail.com | +91 9022477709' }
       ]
     }
   ];
@@ -310,35 +330,89 @@ export default function ProductsPage({ setCurrentPage }) {
         {/* Featured Product Stage Container */}
         <div className="bg-white rounded-3xl border border-[#DCE8E1] shadow-lg overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0">
           
-          {/* LEFT: Studio Pedestal Bottle Stage */}
-          <div className="lg:col-span-5 relative bg-gradient-to-b from-[#F5F8FA] via-[#EBF3F5] to-[#E0EFF2] p-6 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-[#DCE8E1] min-h-[320px] sm:min-h-[380px]">
+          {/* LEFT: Studio Pedestal Stage with Dual View Mode (Bottle vs Official Flyer) */}
+          <div className="lg:col-span-5 relative bg-gradient-to-b from-[#F5F8FA] via-[#EBF3F5] to-[#E0EFF2] p-6 flex flex-col items-center justify-between border-b lg:border-b-0 lg:border-r border-[#DCE8E1] min-h-[360px] sm:min-h-[420px]">
             
-            <div className="absolute top-4 left-4 z-10 flex flex-col space-y-1.5">
-              <span className="px-3 py-1 rounded-xl bg-[#073B2A] text-white text-[10px] font-extrabold uppercase tracking-widest shadow-md">
-                {currentTabProduct.shortTitle}
-              </span>
-              {currentTabProduct.isCoreBusiness && (
-                <span className="px-2.5 py-0.5 rounded-lg bg-[#0B6B50] text-white text-[9px] font-extrabold uppercase tracking-widest shadow-sm inline-flex items-center space-x-1">
-                  <Crown className="w-3 h-3 fill-current" />
-                  <span>PRIMARY CORE BUSINESS</span>
+            <div className="w-full flex items-center justify-between z-10">
+              <div className="flex flex-col space-y-1.5">
+                <span className="px-3 py-1 rounded-xl bg-[#073B2A] text-white text-[10px] font-extrabold uppercase tracking-widest shadow-md">
+                  {currentTabProduct.shortTitle}
                 </span>
+                {currentTabProduct.isCoreBusiness && (
+                  <span className="px-2.5 py-0.5 rounded-lg bg-[#0B6B50] text-white text-[9px] font-extrabold uppercase tracking-widest shadow-sm inline-flex items-center space-x-1">
+                    <Crown className="w-3 h-3 fill-current" />
+                    <span>PRIMARY CORE BUSINESS</span>
+                  </span>
+                )}
+              </div>
+
+              {/* Dual View Mode Toggle if posterImage is available */}
+              {currentTabProduct.posterImage && (
+                <div className="flex items-center p-1 bg-white/90 rounded-xl border border-[#DCE8E1] shadow-sm text-xs font-bold">
+                  <button
+                    onClick={() => setStageViewMode('bottle')}
+                    className={`px-2.5 py-1 rounded-lg transition-all ${
+                      stageViewMode === 'bottle'
+                        ? 'bg-[#073B2A] text-white shadow-xs'
+                        : 'text-[#65736C] hover:text-[#073B2A]'
+                    }`}
+                  >
+                    Bottle
+                  </button>
+                  <button
+                    onClick={() => setStageViewMode('poster')}
+                    className={`px-2.5 py-1 rounded-lg transition-all ${
+                      stageViewMode === 'poster'
+                        ? 'bg-[#073B2A] text-white shadow-xs'
+                        : 'text-[#65736C] hover:text-[#073B2A]'
+                    }`}
+                  >
+                    Flyer
+                  </button>
+                </div>
               )}
             </div>
 
-            <div className="relative w-full h-full flex items-center justify-center">
+            <div className="relative w-full my-auto py-4 flex items-center justify-center group/stage cursor-pointer"
+                 onClick={() => {
+                   if (currentTabProduct.posterImage) {
+                     setSelectedPoster(currentTabProduct.posterImage);
+                   }
+                 }}>
               <img
-                src={currentTabProduct.mainImage}
+                src={stageViewMode === 'poster' && currentTabProduct.posterImage ? currentTabProduct.posterImage : currentTabProduct.mainImage}
                 alt={currentTabProduct.title}
-                className="max-h-[82%] w-auto object-contain drop-shadow-xl z-10 transition-transform duration-500 hover:scale-105"
+                className="max-h-[300px] sm:max-h-[340px] w-auto object-contain drop-shadow-xl z-10 transition-transform duration-500 group-hover/stage:scale-105 rounded-xl"
               />
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-40 h-3.5 bg-black/15 rounded-full blur-md z-0"></div>
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-40 h-3.5 bg-black/15 rounded-full blur-md z-0"></div>
+
+              {currentTabProduct.posterImage && (
+                <div className="absolute bottom-2 right-2 z-20">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedPoster(currentTabProduct.posterImage);
+                    }}
+                    className="px-3 py-1.5 rounded-xl bg-[#073B2A]/90 hover:bg-[#073B2A] text-white text-[11px] font-extrabold uppercase tracking-wider backdrop-blur-md shadow-lg flex items-center space-x-1.5 transition-all"
+                  >
+                    <Maximize2 className="w-3.5 h-3.5 text-[#00A8B5]" />
+                    <span>Expand Flyer</span>
+                  </button>
+                </div>
+              )}
             </div>
+
+            {currentTabProduct.posterImage && (
+              <p className="text-[10px] font-bold text-[#0B6B50] uppercase tracking-wider text-center pt-2 border-t border-[#DCE8E1]/60 w-full">
+                🔍 Click image to inspect official product flyer
+              </p>
+            )}
 
           </div>
 
           {/* RIGHT: Product Info */}
           <div className="lg:col-span-7 p-6 sm:p-8 space-y-4 flex flex-col justify-between">
-            <div className="space-y-3">
+            <div className="space-y-4">
               
               <div className="space-y-1">
                 <div className="flex items-center space-x-2">
@@ -363,6 +437,44 @@ export default function ProductsPage({ setCurrentPage }) {
               <p className="text-sm text-[#65736C] leading-relaxed font-medium">
                 {currentTabProduct.description}
               </p>
+
+              {/* If Product has Health Benefits & Culinary Uses (Product 07 Flyer) */}
+              {currentTabProduct.healthBenefits && (
+                <div className="p-4 rounded-2xl bg-gradient-to-r from-[#EAF4F2] to-[#F5F8FA] border border-[#0B6B50]/20 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-extrabold uppercase tracking-wider text-[#073B2A] flex items-center space-x-1.5">
+                      <HeartPulse className="w-4 h-4 text-[#0B6B50]" />
+                      <span>OFFICIAL HEALTH BENEFITS &amp; CULINARY USES</span>
+                    </span>
+                    <button
+                      onClick={() => setSelectedPoster(currentTabProduct.posterImage)}
+                      className="text-[10px] font-extrabold uppercase tracking-wider text-[#0B6B50] underline hover:text-[#073B2A]"
+                    >
+                      View Poster Infographic →
+                    </button>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                    <div className="space-y-1.5 bg-white p-3 rounded-xl border border-[#DCE8E1]">
+                      <span className="font-extrabold text-[#073B2A] block uppercase text-[11px]">❤️ Health Benefits:</span>
+                      {currentTabProduct.healthBenefits.map((hb, hbIdx) => (
+                        <div key={hbIdx} className="text-[#17211D]">
+                          <strong className="text-[#073B2A]">{hb.name}:</strong> {hb.desc}
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="space-y-1.5 bg-white p-3 rounded-xl border border-[#DCE8E1]">
+                      <span className="font-extrabold text-[#073B2A] block uppercase text-[11px]">🥗 Culinary Uses:</span>
+                      <ul className="space-y-1 list-disc list-inside text-[#65736C]">
+                        {currentTabProduct.culinaryUses.map((use, uIdx) => (
+                          <li key={uIdx}>{use}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* Flavor Variant Pills */}
               <div className="space-y-1.5">
@@ -402,6 +514,16 @@ export default function ProductsPage({ setCurrentPage }) {
                 <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
               </button>
 
+              {currentTabProduct.posterImage && (
+                <button
+                  onClick={() => setSelectedPoster(currentTabProduct.posterImage)}
+                  className="h-[44px] px-5 text-xs font-extrabold uppercase tracking-wider text-white bg-[#0B6B50] hover:bg-[#073B2A] rounded-xl shadow-md transition-all duration-200 flex items-center justify-center space-x-2 w-full sm:w-auto"
+                >
+                  <Eye className="w-4 h-4 text-white" />
+                  <span>VIEW PRODUCT FLYER</span>
+                </button>
+              )}
+
               <button
                 onClick={() => handleNavClick('contact')}
                 className="h-[44px] px-5 text-xs font-extrabold uppercase tracking-wider text-[#073B2A] bg-[#EAF4F2] hover:bg-[#DCE8E1] rounded-xl transition-colors flex items-center justify-center space-x-2 w-full sm:w-auto"
@@ -417,19 +539,19 @@ export default function ProductsPage({ setCurrentPage }) {
 
       </section>
 
-      {/* 3. COMPACT 5-CATEGORY PRODUCT CATALOGUE GRID */}
+      {/* 3. COMPACT 7-CATEGORY PRODUCT CATALOGUE GRID */}
       <section className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-10 space-y-6 pt-4">
         
         <div className="space-y-1">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#073B2A] uppercase tracking-tight">
-            BEVERAGE & HEALTH PRODUCT LINES (CATEGORIES 01 TO 07)
+            BEVERAGE &amp; HEALTH PRODUCT LINES (CATEGORIES 01 TO 07)
           </h2>
           <p className="text-sm text-[#65736C] max-w-2xl font-medium">
             Overview of all 7 commercial product &amp; manufacturing lines in numerical sequence.
           </p>
         </div>
 
-        {/* 5 COMPACT PRODUCT CARDS GRID */}
+        {/* 7 COMPACT PRODUCT CARDS GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((prod) => (
             <div
@@ -442,7 +564,7 @@ export default function ProductsPage({ setCurrentPage }) {
               }`}
             >
               {/* Image Stage */}
-              <div className="h-60 bg-gradient-to-b from-[#F5F8FA] via-[#EBF3F5] to-[#E0EFF2] p-5 flex items-center justify-center relative overflow-hidden border-b border-[#DCE8E1]">
+              <div className="h-64 bg-gradient-to-b from-[#F5F8FA] via-[#EBF3F5] to-[#E0EFF2] p-5 flex items-center justify-center relative overflow-hidden border-b border-[#DCE8E1]">
                 <span className="absolute top-3 left-3 bg-[#073B2A] text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-lg z-10 shadow-xs border border-white/20">
                   {prod.categoryBadge}
                 </span>
@@ -454,10 +576,23 @@ export default function ProductsPage({ setCurrentPage }) {
                   </span>
                 )}
 
+                {prod.posterImage && (
+                  <button
+                    onClick={() => setSelectedPoster(prod.posterImage)}
+                    className="absolute top-3 right-3 bg-[#073B2A] hover:bg-[#0B6B50] text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-lg z-10 flex items-center space-x-1 shadow-xs transition-colors"
+                  >
+                    <Eye className="w-3.5 h-3.5 text-[#00A8B5]" />
+                    <span>Flyer</span>
+                  </button>
+                )}
+
                 <img
                   src={prod.mainImage}
                   alt={prod.title}
-                  className="max-h-[82%] w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md z-10"
+                  className="max-h-[82%] w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md z-10 cursor-pointer"
+                  onClick={() => {
+                    if (prod.posterImage) setSelectedPoster(prod.posterImage);
+                  }}
                 />
 
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-32 h-3 bg-black/15 rounded-full blur-md z-0"></div>
@@ -498,7 +633,17 @@ export default function ProductsPage({ setCurrentPage }) {
                 </div>
 
                 {/* Action CTA */}
-                <div className="pt-3 border-t border-[#DCE8E1]">
+                <div className="pt-3 border-t border-[#DCE8E1] space-y-2">
+                  {prod.posterImage && (
+                    <button
+                      onClick={() => setSelectedPoster(prod.posterImage)}
+                      className="w-full py-2 px-3 text-xs font-bold uppercase tracking-wider text-[#073B2A] bg-[#EAF4F2] hover:bg-[#DCE8E1] rounded-xl transition-colors flex items-center justify-center space-x-1.5"
+                    >
+                      <Eye className="w-3.5 h-3.5 text-[#0B6B50]" />
+                      <span>VIEW OFFICIAL FLYER</span>
+                    </button>
+                  )}
+
                   <button
                     onClick={() => handleNavClick('contact')}
                     className="w-full py-2.5 px-4 text-xs font-bold uppercase tracking-wider text-white bg-[#073B2A] hover:bg-[#0B6B50] rounded-xl transition-colors shadow-xs flex items-center justify-center space-x-1.5"
@@ -534,6 +679,64 @@ export default function ProductsPage({ setCurrentPage }) {
           </button>
         </div>
       </section>
+
+      {/* LIGHTBOX MODAL FOR OFFICIAL FLYER / POSTER VIEWER */}
+      {selectedPoster && (
+        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+             onClick={() => setSelectedPoster(null)}>
+          <div
+            className="bg-[#05291D] rounded-3xl border border-[#0B6B50] p-4 sm:p-6 max-w-4xl w-full shadow-2xl space-y-4 relative my-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between border-b border-[#0B6B50]/40 pb-4">
+              <div>
+                <span className="text-[10px] font-extrabold text-[#00A8B5] uppercase tracking-widest block">
+                  OFFICIAL PRODUCT FLYER Showcase
+                </span>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white uppercase tracking-tight">
+                  PURE PRESS — APPLE CIDER VINEGAR
+                </h3>
+              </div>
+              <button
+                onClick={() => setSelectedPoster(null)}
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+                aria-label="Close flyer view"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Poster Image View */}
+            <div className="rounded-2xl overflow-hidden bg-black/40 flex items-center justify-center max-h-[75vh] border border-[#0B6B50]/30 p-2">
+              <img
+                src={selectedPoster}
+                alt="Pure Press Apple Cider Vinegar Promotional Flyer"
+                className="max-h-[70vh] w-auto object-contain rounded-xl shadow-2xl"
+              />
+            </div>
+
+            {/* Modal Footer CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-[#0B6B50]/40">
+              <div className="text-xs text-gray-300 font-medium">
+                Refined for Cooking. Trusted for Health. • 500 mL PET Bottle
+              </div>
+              <div className="flex items-center space-x-3 w-full sm:w-auto">
+                <button
+                  onClick={() => {
+                    setSelectedPoster(null);
+                    handleNavClick('contact');
+                  }}
+                  className="px-6 py-3 rounded-xl bg-[#00A8B5] hover:bg-[#008C97] text-white text-xs font-extrabold uppercase tracking-wider shadow-md transition-colors w-full sm:w-auto flex items-center justify-center space-x-2"
+                >
+                  <span>INQUIRE ABOUT THIS PRODUCT</span>
+                  <ArrowRight className="w-4 h-4 text-white" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
